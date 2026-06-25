@@ -6,15 +6,17 @@ body{
     margin:auto;
     padding:30px;
     line-height:1.8;
+    padding-top: 0;
 }
 
 h1{
     text-align:center;
     color:#644127;
-    font-size:3rem;
+    font-size:40px;
     margin-bottom:25px;
     border-bottom:4px solid #d4af37;
     padding-bottom:10px;
+    line-height: 1.2;
 }
 
 h2{

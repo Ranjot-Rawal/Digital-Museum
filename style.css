@@ -271,7 +271,7 @@ footer{
 
 
 /* Mobile View*/
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 800px) {
 
     nav{
         overflow-x:auto;
@@ -285,16 +285,16 @@ footer{
     }
 
     .mains {
-        height: 60vh;
-        padding: 20px;
+        height: 40vh;
+        padding: 10px;
     }
 
     .mains h1 {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .content p {
-        font-size: 18px;
+        font-size: 15px;
         padding: 0 10px;
     }
 
@@ -308,21 +308,52 @@ footer{
         gap: 20px;
     }
 
-    /* .card {
-        min-width: 180p;
-        width: 95%;
-        max-width: 300px;
+    .card {
+        /* min-width: 180p; */
+        max-width: 290px;
         padding: 20px;
-        margin: 30px;
-    } */
+    }
 
-    .card h2 {
-        font-size: 24px;
+    .card-g{
+        width: 258px;
+        padding: 23px;
+    }
+    .card-a{
+        width: 258px;
+        padding: 23px;
+    }
+    .card-f{
+        width: 258px;
+        padding: 23px;
+        margin: 0;
+    }
+    .card-s{
+        width: 258px;
+        padding: 23px;
+    }
+
+    .card h2{
+        font-size: 22px;
+    }
+    .card-g h3{
+        font-size: 18px;
+    }
+    .card-a h3{
+        font-size: 18px;
+    }
+    .card-f h3{
+        font-size: 18px;
+        min-height: 27px;
+    }
+    .card-s h3{
+        font-size: 18px;
+        min-height: 30px;
     }
 
     .content2 p {
         font-size: 15px;
     }
+
 
     .submit button {
         width: 80%;
