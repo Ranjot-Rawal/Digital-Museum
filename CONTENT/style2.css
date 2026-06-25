@@ -1,0 +1,99 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#020024,#090979,#000000);
+    color:white;
+    line-height:1.8;
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+/* Main Title */
+h1{
+    text-align:center;
+    font-size:3rem;
+    margin-bottom:30px;
+    color:#ffd700;
+    text-shadow:0 0 15px rgba(255,215,0,0.8);
+}
+
+/* Section Titles */
+h2{
+    margin-top:40px;
+    margin-bottom:15px;
+    color:#87ceeb;
+    border-left:5px solid #ffd700;
+    padding-left:12px;
+}
+
+/* Paragraphs */
+p{
+    margin-bottom:20px;
+    text-align:justify;
+    font-size:1.05rem;
+}
+
+/* Images */
+img{
+    display:block;
+    margin:20px auto;
+    max-width:100%;
+    height:auto;
+    border-radius:15px;
+    border:3px solid #ffd700;
+    box-shadow:0 0 20px rgba(255,215,0,0.4);
+    transition:0.3s;
+}
+
+img:hover{
+    transform:scale(1.04);
+    box-shadow:0 0 30px rgba(255,215,0,0.8);
+}
+
+/* Content Cards */
+h2, p, img{
+    position:relative;
+    z-index:1;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#111;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#ffd700;
+    border-radius:10px;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+}

@@ -1,0 +1,98 @@
+/* Reset */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+body{
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#e38812,#d8dad8,#33b93f);
+    color:#222;
+    line-height:1.8;
+    max-width:1100px;
+    margin:auto;
+    padding:30px;
+}
+
+/* Main Heading */
+h1{
+    text-align:center;
+    color:#784c13;
+    font-size:3rem;
+    margin-bottom:25px;
+    border-bottom:4px solid #138808;
+    padding-bottom:10px;
+}
+
+/* Section Headings */
+h2{
+    margin-top:40px;
+    margin-bottom:15px;
+    color:#0d47a1;
+    border-left:6px solid #ff9933;
+    padding-left:12px;
+}
+
+/* Paragraphs */
+p{
+    font-size:1.05rem;
+    text-align:justify;
+    margin-bottom:20px;
+}
+
+/* Images */
+img{
+    display:block;
+    margin:20px auto;
+    max-width:100%;
+    height:auto;
+    border-radius:15px;
+    border:4px solid #138808;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    transition:0.3s;
+}
+
+img:hover{
+    transform:scale(1.03);
+}
+
+/* Quote */
+blockquote{
+    margin:40px auto;
+    padding:20px;
+    max-width:800px;
+    font-size:1.3rem;
+    font-style:italic;
+    text-align:center;
+    background:#fff3e0;
+    border-left:6px solid #ff9933;
+    border-right:6px solid #138808;
+    border-radius:12px;
+    color:#444;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+
+    p{
+        font-size:1rem;
+    }
+
+    blockquote{
+        font-size:1.1rem;
+    }
+}

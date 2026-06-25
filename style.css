@@ -1,0 +1,345 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    min-height:100vh;
+}
+
+/* Navigation bar */
+
+nav{
+    background:rgba(0,0,0,0.7);
+    padding: 20px;
+    text-align:center;
+    position:sticky;
+    top: 0px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-size:18px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#fbbf24;
+}
+
+nav a.active{
+    color: #f5cd1e;
+}
+
+/* mains conatins index page,s History Nexus and a line with a background pic */
+
+.mains{
+    height:70vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:url("PICTURES/Extra Pics/Project Index Pic.jpg") center/cover;
+    position:relative;
+}
+
+.mains::before{    /*Because the background picture was too bright*/
+    content:"";
+    position:absolute;
+    inset: 0;      /*left top bottom right all are 0 which means the black transparent new background will cover the whole mains ultimately resulting in making the background pic a lil bit dark*/
+    background:rgba(0,0,0,0.55);  /*alpha in rgba set to 0.55 means the black transparent bg in 55% opaque*/
+}
+
+.mains h1,
+.mains .content{
+    /* position:relative; */
+    z-index:1;         /* This will help as the black background will be under the History Nexus and the content paragraph*/
+}
+
+.mains h1{
+    font-size:70px;
+    color:#fbbf24;
+    text-shadow:0 0 50px rgba(255,255,255,0.4);
+    transition: 0.4s;
+}
+
+.mains h1:hover{
+    transform: scale(1.09);
+}
+
+.mains .content{
+    transition: 0.4s;
+}
+
+.mains .content:hover{
+    transform: scale(1.04)
+}
+
+/* Content is the line :-- Explore History, Heritage and Space */
+
+.content p{
+    font-size:24px;
+    margin-top:15px;
+}
+
+/* Container exists in every page except contact page , it contains cards */
+
+.container{
+    padding:70px;
+}
+
+.container h1{
+    transition: 0.4s;
+    display: inline-block;
+}
+.container h1:hover{
+    transform: scale(1.09);
+}
+
+/* I give  diff set of card(not cards) to evry page , only diff for now is their hover shadow glow */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap: 35px;
+    flex-wrap:wrap;
+    padding-top: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Home page Card */
+
+.card{
+    width: 320px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,0.7);
+}
+
+.card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(251,191,36,0.4);
+}
+
+.card h2{
+    color:#b59736;
+    margin-bottom:15px;
+}
+
+a{
+    text-decoration:none;
+}
+
+/* Gallery Page Card */
+
+.card-g{
+    width: 320px;
+    padding: 30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.card-g:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(11, 232, 236, 0.4);
+}
+
+/* Ancient India Page Card */
+
+.card-a{
+    width: 320px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.card-a:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(236, 123, 11, 0.4);
+}
+
+
+/* Freedom Fighters Page Card */
+
+.card-f{
+    width: 320px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.card-f:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(232, 11, 236, 0.4);
+}
+
+
+/* /Space Museum Card */
+
+.card-s{
+    width: 320px;
+    padding:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    transition:0.3s;
+    box-shadow:0 8px 20px rgba(0, 0, 0, 0.7);
+}
+
+.card-s:hover{
+    transform:translateY(-12px);
+    box-shadow:0 15px 35px rgba(28, 179, 23, 0.4);
+}
+
+/* Content lines */
+
+.content2 p{
+    color:#ddd;
+    line-height: 1.5;
+}
+
+/* Footer(On Home and Space Museum Page) */
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#020617;
+    color:#fbbf24;
+    font-weight:bold;
+    letter-spacing:2px;
+    margin-top:50px;
+}
+
+/* colors of title pages in cards */
+
+.Freedom{
+     color: #650f5e;
+}
+
+.Gallery{
+    color: #420739;
+}
+
+.ancient{
+    color: #563506;
+}
+
+.Space{
+    color: #0d470b;
+}
+
+.contact{
+    color: #f4f7f9;
+}
+
+/* Submit Button in Contact */
+
+.submit button{
+    margin:100px;
+    height: 50px;
+    width: 100px;
+    font-size: 20px;
+    transition: 0.4s;
+    box-shadow: 0 15px 30px 20px rgb(240, 230, 230);
+}
+
+.submit button:hover{
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px 20px rgb(39, 206, 228);
+}
+
+
+/* Mobile View*/
+@media screen and (max-width: 768px) {
+
+    nav{
+        overflow-x:auto;
+        white-space:nowrap;
+        text-align:left;
+    }
+
+    nav a{
+        display:inline-block;
+        margin:0 10px;
+    }
+
+    .mains {
+        height: 60vh;
+        padding: 20px;
+    }
+
+    .mains h1 {
+        font-size: 40px;
+    }
+
+    .content p {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+
+    .container {
+        padding: 40px 15px;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* .card {
+        min-width: 180p;
+        width: 95%;
+        max-width: 300px;
+        padding: 20px;
+        margin: 30px;
+    } */
+
+    .card h2 {
+        font-size: 24px;
+    }
+
+    .content2 p {
+        font-size: 15px;
+    }
+
+    .submit button {
+        width: 80%;
+        max-width: 250px;
+        margin: 30px auto;
+        display: block;
+        font-size: 18px;
+    }
+
+    footer {
+        font-size: 14px;
+        padding: 20px;
+        letter-spacing: 1px;
+    }
+
+    .submit button{
+        width: 100px;
+        font-size: 15px;
+    }
+}
