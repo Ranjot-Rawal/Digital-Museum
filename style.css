@@ -311,7 +311,7 @@ a {
     background: url(z-pic2.png);
     background-size: 100%;
     /* box-shadow: 0 8px 25px rgba(0,0,0,0),0 0 10px rgba(255,196,0,1); */
-    z-index: 9;
+    z-index: 4;
 }
 
 .timeline strong,
@@ -398,6 +398,7 @@ a {
     right: 10px;
     clip-path: inset(2px);
     transition: 0.3s;
+    z-index: 9;
 
 }
 .botpic:hover{
@@ -788,6 +789,7 @@ nav a {
     gap:18px;
 
     background-size:cover;
+    z-index: 1;
 
 
 }
