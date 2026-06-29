@@ -708,7 +708,7 @@ nav a {
 /* Hero Section */
 
 .mains{
-    height:100vh;
+    height:80vh;
     justify-content:center;
     align-items:flex-start;
     padding:25px;
@@ -774,10 +774,12 @@ nav a {
 /* Timeline */
 
 .timeline-band{
+    min-width: 90px;
     width:70%;
     height:70%;
+    margin: 50px auto;
 
-    margin:25px 100px;
+    /* margin-left: 100px; */
 
     display:flex;
     flex-direction:column;
@@ -821,7 +823,7 @@ nav a {
 
 .worldmap{
     width:50%;
-    height:220px;
+    height:50%;
     margin:30px auto;
     background-position:center;
 }
