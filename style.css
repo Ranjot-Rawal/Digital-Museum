@@ -896,3 +896,34 @@ footer{
     }
 
 }
+
+
+@media (max-width: 768px){
+
+.timeline-band{
+    width:95%;
+    padding:20px;
+    margin:auto;
+}
+
+.timeline{
+    display:block;
+}
+
+.png{
+    display:none; /* Hide artifact on phones */
+}
+
+.botpic{
+    width:80px;
+    right:10px;
+    bottom:10px;
+}
+
+nav{
+    overflow-x:auto;
+    white-space:nowrap;
+    justify-content:flex-start;
+}
+
+}
