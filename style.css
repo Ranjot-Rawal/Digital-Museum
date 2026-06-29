@@ -561,7 +561,7 @@ select {
 }
 
 /* Mobile View*/
-@media screen and (max-width: 1000px) {
+/* @media screen and (max-width: 1000px) {
 
     nav {
         overflow-x: auto;
@@ -670,4 +670,227 @@ select {
         width: 100px;
         font-size: 15px;
     }
+} */
+
+
+/* ===========================
+   MOBILE RESPONSIVE DESIGN
+=========================== */
+
+@media (max-width:768px){
+
+/* Navbar */
+
+/* nav{
+    padding:15px 10px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav a{
+    margin:5px;
+    font-size:15px;
+} */
+
+nav{
+        overflow-x: auto;
+        white-space: nowrap;
+        text-align: left;
+    }
+
+nav a {
+        display: inline-block;
+        margin: 0 10px;
+}
+
+/* Hero Section */
+
+.mains{
+    height:100vh;
+    justify-content:center;
+    align-items:flex-start;
+    padding:25px;
+}
+
+.mains h1{
+    font-size:62px;
+    width:auto;
+    margin-left:0;
+    line-height:0.95;
+}
+
+.mains .upper{
+    margin-left:0;
+    width:auto;
+    font-size:13px;
+}
+
+.mains .content{
+    margin-left:0;
+}
+
+.content p{
+    font-size:18px;
+}
+
+
+/* Containers */
+
+.container{
+    padding:25px 15px;
+}
+
+.container-i{
+    margin:20px 10px;
+    padding:25px 15px;
+}
+
+
+/* Home Cards */
+
+.card{
+    width:100%;
+    margin-right:0;
+    padding:20px;
+}
+
+.card h2{
+    width:100%;
+}
+
+
+/* Gallery Cards */
+
+.card-g,
+.card-a,
+.card-f,
+.card-s{
+    width:100%;
+}
+
+
+/* Timeline */
+
+.timeline-band{
+    width:70%;
+    height:70%;
+
+    margin:25px 100px;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:18px;
+    gap:18px;
+
+    background-size:cover;
+
+
+}
+
+.time{
+    margin-top: -85px;
+}
+
+.timeline-band h2{
+    font-size:24px;
+    text-align:center;
+}
+
+.timeline-upper{
+    display: flex;
+    justify-content: center;
+}
+
+.timeline strong,
+.timeline p{
+    font-size:14px;
+}
+
+
+/* Artifact Image */
+
+.png{
+    display:none;
+}
+
+
+/* World Map */
+
+.worldmap{
+    width:50%;
+    height:220px;
+    margin:30px auto;
+    background-position:center;
+}
+
+
+/* Buttons */
+
+.button-i{
+    width:100%;
+    margin:12px 0;
+}
+
+
+/* Chatbot */
+
+.chat-section{
+    width:95%;
+    margin:30px auto;
+    padding:18px;
+}
+
+.chat-box{
+    height:300px;
+}
+
+.bot,
+.user{
+    max-width:90%;
+}
+
+
+/* Floating Robot */
+
+.botpic{
+    width:110px;
+    height:110px;
+    right:10px;
+    bottom:10px;
+}
+
+
+/* Exit Button */
+
+.exit-btn{
+    top:12px;
+    right:12px;
+    padding:10px 15px;
+    font-size:14px;
+}
+
+
+/* Submit Button */
+
+.submit button{
+    width:100%;
+    margin:30px 0;
+}
+
+
+/* Footer */
+
+footer{
+    font-size:14px;
+    padding:18px;
+}
+
+.submit button {
+        width: 100px;
+        font-size: 15px;
+    }
+
 }
