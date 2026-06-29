@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0px;
+    z-index: 90;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fbbf24;
+}
+
+nav a.active {
+    color: #f5cd1e;
+}
+
+
+.spacepic {
+    background-image: url(space-body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100vw;
+    height: 70vh;
+    clip-path: inset(0 0 140px 0);
+    margin: 0 0 -150px 0;
+}
+
+.spacepic img {
+    background-size: cover;
+    width: 451px;
+    height: 231px;
+    margin: -140px 0px -76px 110px;
+}
+
+.spacepic h1 {
+    color: rgb(196, 174, 53);
+    font-size: 63px;
+    padding: 40px 138px 40px;
+}
+
+.written {
+    color: white;
+    width: 400px;
+    margin: 0 0 0 142px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.spacepic .button-space {
+    background-color: rgba(193, 161, 56, 0.09);
+    color: rgb(187, 169, 37);
+    padding: 25px 40px 21px 43px;
+    border: 2px solid gold;
+    width: 200px;
+    margin: 24px 0 0px 197px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 23px;
+    transition: 0.3s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.button-space:hover {
+    transform: scale(1.09);
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.card-s1 {
+    /* background-color: rgb(19, 19, 55); */
+    background-image: url(neil.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: gold;
+    height: 279px;
+    width: 345px;
+    display: grid;
+    display: inline-grid;
+    /* gap: 20px; */
+    border: 2px solid gold;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card-s2 {
+    /* background-color: rgb(19, 19, 55); */
+    background-image: url(james.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: gold;
+    height: 279px;
+    width: 345px;
+    display: grid;
+    display: inline-grid;
+    /* gap: 20px; */
+    border: 2px solid gold;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card-s3 {
+    /* background-color: rgb(19, 19, 55); */
+    background-image: url(marspic.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: gold;
+    height: 279px;
+    width: 345px;
+    display: grid;
+    display: inline-grid;
+    /* gap: 20px; */
+    border: 2px solid gold;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card-s4 {
+    /* background-color: rgb(19, 19, 55); */
+    background-image: url(isspic.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: gold;
+    height: 279px;
+    width: 345px;
+    display: grid;
+    display: inline-grid;
+    /* gap: 20px; */
+    border: 2px solid gold;
+    border-radius: 20px;
+    transition: 0.3s;
+    box-shadow: #f5cd1e;
+}
+
+.card-s1:hover {
+    transform: scale(1.09);
+    box-shadow: 0 8px 15px rgb(202, 172, 23);
+}
+
+.card-s2:hover {
+    transform: scale(1.09);
+    box-shadow: 0 8px 15px rgb(196, 208, 28);
+}
+
+.card-s3:hover {
+    transform: scale(1.09);
+    box-shadow: 0 8px 15px rgb(217, 204, 21);
+}
+
+.card-s4:hover {
+    transform: scale(1.09);
+    box-shadow: 0 8px 15px rgb(216, 216, 21);
+}
+
+.Space {
+    padding: 203px 0px 2px 0px;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 -25px 0;
+}
+
+.content2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 0 0 0 0;
+}
+
+footer{
+    color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid gold;
+    height: 10vh;
+    margin-top: 20px;
+}
+
+/* ================= MOBILE VIEW ================= */
+
+@media (max-width: 768px) {
+
+    nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        text-align: left;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .spacepic {
+        width: 88%;
+        height: 30vh;
+        /* min-height: 60vh; */
+        background-position: center;
+        background-size: cover;
+        clip-path: none;
+        margin: 0;
+        padding: 30px 20px;
+    }
+
+    .spacepic h1 {
+        font-size: 29px;
+        text-align: center;
+        padding: 0;
+        /* margin-bottom: 20px; */
+    }
+
+    .line-s{
+        display: none;
+    }
+
+    .written {
+        width: 100%;
+        margin: 10px 0 0 0;
+        text-align: center;
+        font-size: 12px;
+        padding: 0 10px;
+    }
+
+    .spacepic .button-space {
+        width: 220px;
+        margin: 25px auto 0;
+        padding: 16px;
+        font-size: 18px;
+        justify-content: center;
+    }
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 40px 0;
+    }
+
+    .card-s1,
+    .card-s2,
+    .card-s3,
+    .card-s4 {
+        /* width: 90%; */
+        max-width: 300px;
+        height: 250px;
+        background-size: contain;
+        /* background-position: center; */
+    }
+
+    .Space {
+        padding: 190px 0;
+        margin: 0 0 0 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .content2 {
+        /* display: none; */
+        text-align: center;
+        padding: 0 20px;
+        font-size: 15px;
+        margin: -183px 0 159px 0;
+    }
+
+    footer{
+        border: 2px solid rgb(201, 228, 23);    
+        margin: 0 0 0 0;
+        /* padding: 15px 0; */
+        padding-bottom: 0;
+    }
+}
