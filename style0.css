@@ -364,32 +364,25 @@ a {
     box-shadow: 0 8px 15px black;
 }
 
-/* Artifact */
+/* PNG  */
 .png{
     background-image: url(z-pic4.png);
     height: 600px;
     width: 512px;
     background-size: cover;
     display: inline-flex;
-    margin: -600px 900px 0;
+    position: relative;
+    left: 850px;
+    bottom:607px;
     z-index: 6;
     transform: scaleX(1.1);
-}
-
-/* World Map */
-.worldmap{
-    background-image: url(z-pic5.png);
-    background-size: cover;
-    margin-left: 500px;
-    height: 400px;
-    width: 550px;
 }
 
 /* AI Pic In Index */
 .botpic{
     height: 200px;
     width: 200px;
-    background-image:url(aibot4.png) ;
+    background-image:url(z-pic3.png) ;
     background-size: cover;
     position: fixed;
     bottom: 1px;
@@ -559,7 +552,7 @@ select {
 }
 
 /* Mobile View*/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 100px) {
 
     nav {
         overflow-x: auto;

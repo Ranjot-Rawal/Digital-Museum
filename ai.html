@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="chat-section">
+
+        <h2>🤖 History Nexus AI Assistant</h2>
+
+        <div class="chat-box" id="chatBox">
+
+            <div class="bot">
+                Hello! 👋<br>
+                Select a question below.
+            </div>
+
+        </div>
+
+        <select id="question">
+            <option value="">Choose a Question</option>
+            <option>What is the Indus Valley Civilization?</option>
+            <option>Who was Bhagat Singh?</option>
+            <option>What is Apollo 11?</option>
+            <option>What is ISRO?</option>
+            <option>Who was Mahatma Gandhi?</option>
+            <option>Who built the Taj Mahal?</option>
+            <option>Who was Netaji Subhas Chandra Bose?</option>
+            <option>What was the Gupta Empire?</option>
+            <option>What was the Maurya Empire?</option>
+            <option>Who was Emperor Ashoka?</option>
+            <option>Who was Chandragupta Maurya?</option>
+            <option>What is the Red Fort?</option>
+            <option>Who was Rani Lakshmibai?</option>
+            <option>What is Chandrayaan-3?</option>
+            <option>What is Mangalyaan?</option>
+            <option>Who was Dr. A.P.J. Abdul Kalam?</option>
+            <option>What is the International Space Station?</option>
+            <option>Who was Kalpana Chawla?</option>
+            <option>What is the Solar System?</option>
+            <option>What is a Black Hole?</option>
+            <option>What are Ancient Coins?</option>
+            <option>What are Ancient Pottery artifacts?</option>
+            <option>Why is the Moon important?</option>
+            <option>Who invented the telescope?</option>
+            <option>What is NASA?</option>
+        </select>
+
+        <button class="notcontactbutton" onclick="sendQuestion()">Ask</button>
+        <a href="index.html" class="exit-btn">← Exit to Home</a>
+    </section>
+</body>
+<script>
+    function sendQuestion() {
+
+        let q = document.getElementById("question").value;
+
+        if (q == "") {
+            return;
+        }
+
+        let chat = document.getElementById("chatBox");
+
+        chat.innerHTML += `
+<div class="user">${q}</div>
+`;
+
+        chat.innerHTML += `
+<div class="bot" id="typing">Typing...</div>
+`;
+
+        chat.scrollTop = chat.scrollHeight;
+
+        setTimeout(() => {
+
+            let ans = "";
+
+            switch (q) {
+
+                case "What is the Indus Valley Civilization?":
+                    ans = "The Indus Valley Civilization was one of the world's earliest urban civilizations that flourished around 2500 BCE.";
+                    break;
+
+                case "Who was Bhagat Singh?":
+                    ans = "Bhagat Singh was an Indian revolutionary who became a symbol of courage in the struggle for independence.";
+                    break;
+
+                case "What is Apollo 11?":
+                    ans = "Apollo 11 was NASA's mission that landed the first humans on the Moon in 1969.";
+                    break;
+
+                case "What is ISRO?":
+                    ans = "ISRO is the Indian Space Research Organisation responsible for India's satellites and space missions.";
+                    break;
+
+                case "Who was Mahatma Gandhi?":
+                    ans = "Mahatma Gandhi led India's freedom movement using non-violence and civil disobedience.";
+                    break;
+                case "Who built the Taj Mahal?":
+                    ans = "The Taj Mahal was built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal.";
+                    break;
+
+                case "Who was Netaji Subhas Chandra Bose?":
+                    ans = "Netaji Subhas Chandra Bose was a great freedom fighter who founded the Indian National Army (INA).";
+                    break;
+
+                case "What was the Gupta Empire?":
+                    ans = "The Gupta Empire (320–550 CE) is known as the Golden Age of India because of its achievements in science, mathematics, literature, and art.";
+                    break;
+
+                case "What was the Maurya Empire?":
+                    ans = "The Maurya Empire was India's first large empire, founded by Chandragupta Maurya in 322 BCE.";
+                    break;
+
+                case "Who was Emperor Ashoka?":
+                    ans = "Ashoka was a Mauryan emperor who embraced Buddhism after the Kalinga War and promoted peace and non-violence.";
+                    break;
+
+                case "Who was Chandragupta Maurya?":
+                    ans = "Chandragupta Maurya founded the Maurya Empire with the guidance of Chanakya.";
+                    break;
+
+                case "What is the Red Fort?":
+                    ans = "The Red Fort in Delhi was built by Mughal Emperor Shah Jahan and is a UNESCO World Heritage Site.";
+                    break;
+
+                case "Who was Rani Lakshmibai?":
+                    ans = "Rani Lakshmibai, the Queen of Jhansi, was one of the bravest leaders of the Revolt of 1857.";
+                    break;
+
+                case "What is Chandrayaan-3?":
+                    ans = "Chandrayaan-3 is ISRO's mission that successfully achieved a soft landing near the Moon's south pole in 2023.";
+                    break;
+
+                case "What is Mangalyaan?":
+                    ans = "Mangalyaan, or the Mars Orbiter Mission, was India's first successful mission to Mars.";
+                    break;
+
+                case "Who was Dr. A.P.J. Abdul Kalam?":
+                    ans = "Dr. A.P.J. Abdul Kalam was India's Missile Man and the 11th President of India.";
+                    break;
+
+                case "What is the International Space Station?":
+                    ans = "The International Space Station (ISS) is a large space laboratory where astronauts from different countries live and conduct experiments.";
+                    break;
+
+                case "Who was Kalpana Chawla?":
+                    ans = "Kalpana Chawla was the first woman of Indian origin to travel to space.";
+                    break;
+
+                case "What is the Solar System?":
+                    ans = "The Solar System consists of the Sun, eight planets, moons, asteroids, comets, and other celestial bodies.";
+                    break;
+
+                case "What is a Black Hole?":
+                    ans = "A black hole is a region in space where gravity is so strong that even light cannot escape.";
+                    break;
+
+                case "What are Ancient Coins?":
+                    ans = "Ancient coins were used as currency by early civilizations and provide valuable information about rulers, trade, and culture.";
+                    break;
+
+                case "What are Ancient Pottery artifacts?":
+                    ans = "Ancient pottery includes clay vessels and utensils used for cooking, storage, and decoration by early civilizations.";
+                    break;
+
+                case "Why is the Moon important?":
+                    ans = "The Moon affects Earth's tides, stabilizes its rotation, and has been the destination of many space missions.";
+                    break;
+
+                case "Who invented the telescope?":
+                    ans = "The first practical telescope is credited to Dutch spectacle maker Hans Lippershey, while Galileo greatly improved it for astronomy.";
+                    break;
+
+                case "What is NASA?":
+                    ans = "NASA is the National Aeronautics and Space Administration, the United States' space agency responsible for space exploration and scientific research.";
+                    break;
+            }
+
+            document.getElementById("typing").remove();
+
+            chat.innerHTML += `
+<div class="bot">
+🤖 ${ans}
+</div>
+`;
+
+            chat.scrollTop = chat.scrollHeight;
+
+        }, 1000);
+
+    }
+</script>
+
+</html>
