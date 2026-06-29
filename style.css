@@ -20,6 +20,7 @@ nav {
     text-align: center;
     position: sticky;
     top: 0px;
+    z-index: 90;
 }
 
 nav a {
@@ -50,6 +51,7 @@ nav a.active {
     text-align: left;
     background: url("PICTURES/Extra Pics/Project Index Pic.jpg") center/cover;
     position: relative;
+    z-index: 500;
 }
 
 .mains::before {
