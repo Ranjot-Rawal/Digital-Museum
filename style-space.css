@@ -1,36 +1,69 @@
 * {
     margin: 0;
     padding: 0;
+    /* box-sizing: border-box; */
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
     background-color: black;
 }
 
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b6914, #d4af37);
+    border-radius: 4px;
+}
+
 nav {
-    background: rgba(0, 0, 0, 0.7);
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 18px 20px;
     text-align: center;
     position: sticky;
-    top: 0px;
+    top: 0;
     z-index: 90;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
 nav a {
-    color: white;
+    color: #c0c0c0;
     text-decoration: none;
-    margin: 15px;
-    font-size: 18px;
-    font-weight: 600;
+    margin: 0 18px;
+    font-size: 16px;
+    font-weight: 500;
     transition: 0.3s;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 6px;
 }
 
 nav a:hover {
-    color: #fbbf24;
+    color: #f5cd1e;
 }
 
 nav a.active {
     color: #f5cd1e;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: #f5cd1e;
+    border-radius: 2px;
 }
 
 
@@ -74,11 +107,11 @@ nav a.active {
     padding: 25px 40px 21px 43px;
     border: 2px solid gold;
     width: 200px;
-    margin: 24px 0 0px 197px;
+    margin: 10px 0 0px 197px;
     border-radius: 20px;
     display: flex;
     align-items: center;
-    font-size: 23px;
+    font-size: 21px;
     transition: 0.3s;
 }
 
@@ -92,9 +125,11 @@ a {
 
 .cards {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 18px;
+    width: 100vw;
 }
 
 .card-s1 {
@@ -105,7 +140,6 @@ a {
     color: gold;
     height: 279px;
     width: 345px;
-    display: grid;
     display: inline-grid;
     /* gap: 20px; */
     border: 2px solid gold;
@@ -121,7 +155,6 @@ a {
     color: gold;
     height: 279px;
     width: 345px;
-    display: grid;
     display: inline-grid;
     /* gap: 20px; */
     border: 2px solid gold;
@@ -137,7 +170,6 @@ a {
     color: gold;
     height: 279px;
     width: 345px;
-    display: grid;
     display: inline-grid;
     /* gap: 20px; */
     border: 2px solid gold;
@@ -153,13 +185,11 @@ a {
     color: gold;
     height: 279px;
     width: 345px;
-    display: grid;
     display: inline-grid;
     /* gap: 20px; */
     border: 2px solid gold;
     border-radius: 20px;
     transition: 0.3s;
-    box-shadow: #f5cd1e;
 }
 
 .card-s1:hover {
@@ -204,6 +234,7 @@ footer{
     border-top: 2px solid gold;
     height: 10vh;
     margin-top: 20px;
+    width: 100vw;
 }
 
 /* ================= MOBILE VIEW ================= */
@@ -213,7 +244,9 @@ footer{
     nav {
         overflow-x: auto;
         white-space: nowrap;
-        text-align: left;
+        text-align: center;
+        /* display: flex;
+        justify-content: center; */
     }
 
     nav a {
@@ -278,8 +311,8 @@ footer{
     }
 
     .Space {
-        padding: 190px 0;
-        margin: 0 0 0 0;
+        /* padding: 0 0 0 0; */
+        /* margin: 0 0 0 0; */
         margin: 0;
         text-align: center;
     }
@@ -289,11 +322,11 @@ footer{
         text-align: center;
         padding: 0 20px;
         font-size: 15px;
-        margin: -183px 0 159px 0;
+        /* margin: 0 0 0 0; */
     }
 
     footer{
-        border: 2px solid rgb(201, 228, 23);    
+        border-top: 2px solid rgb(201, 228, 23);    
         margin: 0 0 0 0;
         /* padding: 15px 0; */
         padding-bottom: 0;

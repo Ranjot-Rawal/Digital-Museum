@@ -10,6 +10,7 @@ body {
     background-color: black;
     color: white;
     min-height: 100vh;
+    width: 100vw;
 }
 
 /* Navigation bar */
@@ -30,6 +31,7 @@ nav a {
     font-size: 18px;
     font-weight: 600;
     transition: 0.3s;
+    position: relative;
 }
 
 nav a:hover {
@@ -38,6 +40,18 @@ nav a:hover {
 
 nav a.active {
     color: #f5cd1e;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 4px;
+    background: #f5cd1e;
+    border-radius: 2px;
 }
 
 /* mains conatins index page,s History Nexus and a line with a background pic */
@@ -298,7 +312,7 @@ a {
 }
 
 .timeline-band {
-    height: 50vh;
+    height: 50%;
     width: 50vw;
     position: relative;
     display: inline-grid;
@@ -372,7 +386,6 @@ a {
     height: 600px;
     width: 512px;
     background-size: cover;
-    display: inline-flex;
     margin: -600px 900px 0;
     z-index: 6;
     transform: scaleX(1.1);
@@ -944,4 +957,41 @@ nav{
     justify-content:flex-start;
 }
 
+}
+
+@media (max-width: 1000px){
+    .timeline-band{
+        width: 70vw;
+        margin: 0 0 0 0;
+    }
+    .time-container{
+        display: flex;
+        justify-content: center;
+    }
+    .png{
+        display: none;
+    }
+    .worldmap{
+        margin: 0;
+    }
+    .world{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b6914, #d4af37);
+    border-radius: 4px;
 }

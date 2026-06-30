@@ -4,50 +4,76 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Gallery</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style-gallery.css">
     </head>
     <body>
-        <div class="gallery"></div>
-            <div style="background:linear-gradient(135deg,red,blue);min-height: 100vh;">
-                <nav>
-                    <a href="index.html">Home</a>
-                    <a href="gallery.html" class="active">Gallery</a>
-                    <a href="ancient.html">Ancient India</a>
-                    <a href="freedom.html">Freedom Fighters</a>
-                    <a href="space.html">Space Museum</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="ancient.html">Ancient India</a>
+            <a href="freedom.html">Freedom Fighters</a>
+            <a href="space.html">Space Museum</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-                <div class="container">
-                    <h1>Gallery</h1>
-                    <div class="cards">
-                        <a href="CONTENT/ancient-pottery.html">
-                            <div class="card-g">
-                                <h3 class="Gallery">Ancient Pottery</h3>
-                                <div class="content2">
-                                    <p>Artifacts of Human Creativity</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="CONTENT/historic coins.html">
-                            <div class="card-g">
-                                <h3 class="Gallery">Historic Coins</h3>
-                                <div class="content2">
-                                    <p>Coins that Witnessed History</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="CONTENT/famous-paintings.html">
-                            <div class="card-g">
-                                <h3 class="Gallery">Famous Paintings</h3>
-                                <div class="content2">
-                                    <p>Stories of Color and Canvas</p>
-                                </div>
-                            </div>
-                        </a>
+        <div class="gallery-header">
+            <h1>Gallery</h1>
+            <p>Explore artifacts that tell stories of our rich heritage.</p>
+        </div>
+        <div class="temple">
+            <div class="cards">
+                <a href="CONTENT/ancient-pottery.html">
+                    <div class="card-g">
+                        <div class="card-image">
+                            <img src="pottery.jpg" alt="Ancient Pottery">
+                        </div>
+                        <div class="card-icon">🏺</div>
+                        <h3>Ancient Pottery</h3>
+                        <div class="content2">
+                            <p>Artifacts of Human Creativity</p>
+                        </div>
+                        <div class="explore-btn">Explore Collection</div>
                     </div>
-                </div>
+                </a>
+
+                <a href="CONTENT/historic coins.html">
+                    <div class="card-g">
+                        <div class="card-image">
+                            <img src="coins.jpg" alt="Historic Coins" >
+                        </div>
+                        <div class="card-icon">🏛</div>
+                        <h3>Historic Coins</h3>
+                        <div class="content2">  
+                            <p>Coins that Witnessed History</p>
+                        </div>
+                        <div class="explore-btn">Explore Collection</div>
+                    </div>
+                </a>
+
+                <a href="CONTENT/famous-paintings.html">
+                    <div class="card-g">
+                        <div class="card-image">
+                            <img src="painting.jpg" alt="Famous Paintings">
+                        </div>
+                        <div class="card-icon">🎨</div>
+                        <h3>Famous Paintings</h3>
+                        <div class="content2">
+                            <p>Stories of Color and Canvas</p>
+                        </div>
+                        <div class="explore-btn">Explore Collection</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="aibot">
+                <a href="ai.html">
+                    <div class="botpic"></div>
+                </a>
+                <a href="ai.html">
+                    <div class="ask-btn">Ask Me Anything</div>
+                </a>
             </div>
         </div>
+        <footer>CHRONICLE NEXUS</footer>
     </body>
 </html>
