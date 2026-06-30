@@ -50,6 +50,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 90;
+    width: 100vw;
     border-bottom: 1px solid rgba(212, 175, 55, 0.15);
 }
 
@@ -231,7 +232,7 @@ nav a.active::after {
     /* width: calc(100% - 50px); */
     margin: 0 25px 25px;
     padding: 12px 20px;
-    background: transparent;
+    /* background: transparent; */
     border: 1.5px solid rgba(212, 175, 55, 0.4);
     border-radius: 25px;
     color: #d4af37;
@@ -301,11 +302,6 @@ nav a.active::after {
     align-items: center;
     gap: 6px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-}
-
-.ask-btn::before {
-    content: "🤖";
-    font-size: 14px;
 }
 
 .ask-btn:hover {

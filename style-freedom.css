@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: black;
+    background-image: url(z-fighters.jpg);
+    background-size: cover;
+    /* background-size: 102vw 116vh; */
+    background-repeat: no-repeat;
+    /* position: fixed; */
+    /* width: ; */
+    height: 100vh;
+}
+
+/* --- Scrollbar Styling --- */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #8b6914, #d4af37);
+    border-radius: 4px;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 18px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 90;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+nav a {
+    color: #c0c0c0;
+    text-decoration: none;
+    margin: 0 18px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+    letter-spacing: 0.5px;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+nav a:hover {
+    color: #f5cd1e;
+}
+
+nav a.active {
+    color: #f5cd1e;
+}
+
+nav a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 3px;
+    background: #f5cd1e;
+    border-radius: 2px;
+}
+
+
+.head {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.head h1 {
+    color: rgb(211, 211, 151);
+    margin: 30px 0 0 0;
+    font-size: 50px;
+}
+
+.head p {
+    color: white;
+}
+
+/* Decorative gold line */
+.head h1::after {
+    content: "";
+    display: block;
+    width: 526px;
+    height: 2px;
+    background: linear-gradient(90deg, #d4af37, #f5cd1e, #d4af37);
+    margin-top: 1px;
+    border-radius: 1px;
+}
+
+.head p {
+    color: #b8a88a;
+    font-size: 17px;
+    line-height: 1.6;
+    /* max-width: 400px; */
+    margin-top: 20px;
+}
+
+.cards {
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 50px 0 0 0;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.card-f1,
+.card-f2,
+.card-f3 {
+    width: 200px;
+    height: 350px;
+}
+
+.card-f1 {
+    border: 2px solid orangered;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(20, 18, 15, 0.95), rgba(15, 13, 10, 0.98));
+    transition: 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-f2 {
+    border: 2px solid wheat;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(20, 18, 15, 0.95), rgba(15, 13, 10, 0.98));
+    transition: 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card-f3 {
+    border: 2px solid green;
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(20, 18, 15, 0.95), rgba(15, 13, 10, 0.98));
+    transition: 0.4s ease;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+.card-f1:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(202, 45, 5, 0.812), 0 0 60px rgba(0, 0, 0, 0.4);
+    border-color: rgba(252, 64, 7, 0.8);
+}
+
+.card-f2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(222, 217, 202, 0.725);
+    border-color: rgba(232, 231, 231, 0.6);
+}
+
+.card-f3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(110, 221, 20, 0.632);
+    border-color: rgba(148, 215, 24, 0.784);
+}
+
+.card-f1 .card-image {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-f2 .card-image {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-f3 .card-image {
+    height: 220px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+a {
+    text-decoration: none;
+}
+
+.card-f1 h3,
+.card-f2 h3,
+.card-f3 h3 {
+    margin: 30px 0 0 0;
+    color: rgba(255, 217, 0, 0.725);
+    font-size: 18px;
+}
+
+.card-f1 p,
+.card-f2 p,
+.card-f3 p {
+    margin: 4px 0 0 0;
+    color: whitesmoke;
+    font-style: italic;
+    font-size: 14px;
+}
+
+.quote {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin: -125px 0 0 0;
+    object-fit: cover;
+    overflow-y: hidden;
+
+}
+
+.quote img {
+    height: 400px;
+    width: 510px;
+    object-fit: cover;
+    /* display: block; */
+    vertical-align: bottom;
+    margin-bottom: -125px;
+    /* clip-path: inset(0 0 30px 0); */
+}
+
+footer{
+    color: gold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid gold;
+    height: 10vh;
+    margin-top: 20px;
+    width: 100vw;
+    position: sticky;
+    background: black;
+}
+
+@media (max-width: 768px) {
+
+    body{
+        /* background-position: center; */
+        background-size: cover;
+        /* height: auto; */
+        min-height: 100vh;
+    }
+
+    nav{
+        padding: 14px 8px;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    nav a{
+        margin: 0 10px;
+        font-size: 14px;
+    }
+
+    .head h1{
+        font-size: 34px;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .head h1::after{
+        width: 240px;
+    }
+
+    .head p{
+        width: 90%;
+        font-size: 14px;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .cards{
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding-top: 35px;
+    }
+
+    .card-f1,
+    .card-f2,
+    .card-f3{
+        width: 260px;
+        height: 390px;
+    }
+
+    .card-f1 .card-image,
+    .card-f2 .card-image,
+    .card-f3 .card-image{
+        height: 245px;
+    }
+
+    .card-f1 h3,
+    .card-f2 h3,
+    .card-f3 h3{
+        font-size: 20px;
+    }
+
+    .card-f1 p,
+    .card-f2 p,
+    .card-f3 p{
+        font-size: 15px;
+        padding: 0 10px;
+    }
+
+    .quote{
+        margin-top: -80px;
+    }
+
+    .quote img{
+        width: 300px;
+        height: auto;
+    }
+}
