@@ -82,7 +82,7 @@ nav a.active::after {
 
 .head h1 {
     color: rgb(211, 211, 151);
-    margin: 30px 0 0 0;
+    margin: 30px 0 0 30px;
     font-size: 50px;
 }
 
@@ -94,7 +94,7 @@ nav a.active::after {
 .head h1::after {
     content: "";
     display: block;
-    width: 526px;
+    width: 481px;
     height: 2px;
     background: linear-gradient(90deg, #d4af37, #f5cd1e, #d4af37);
     margin-top: 1px;
@@ -228,6 +228,77 @@ a {
     text-decoration: none;
 }
 
+.card-icon-1 {
+    width: 55px;
+    height: 55px;
+    border: 2px solid orange;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: -28px;
+    z-index: 2;
+    background-color: black;
+    font-size: 26px;
+    transition: 0.3s;
+    /* background: conic-gradient(
+        orange 0deg 120deg,
+        white 120deg 240deg,
+        green 240deg 360deg
+    ); */
+}
+
+.card-icon-2 {
+    width: 55px;
+    height: 55px;
+    border: 2px solid rgb(231, 223, 223);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: -28px;
+    z-index: 2;
+    background-color: black;
+    font-size: 26px;
+    transition: 0.3s;
+}
+.card-icon-3 {
+    width: 55px;
+    height: 55px;
+    border: 2px solid rgb(22, 190, 22);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: -28px;
+    z-index: 2;
+    background-color: black;
+    font-size: 26px;
+    transition: 0.3s ease;
+}
+
+.card-f1:hover .card-icon-1{
+    transform: scale(1.03);
+    /* transition: 0.3s ease; */
+    border:2px solid orangered;
+    box-shadow: 5px 5px 20px orangered;
+}
+.card-f2:hover .card-icon-2{
+    transform: scale(1.03);
+    /* transition: 0.3s ease; */
+    border: 2px solid white;
+    box-shadow: 5px 5px 20px white;
+}
+.card-f3:hover .card-icon-3{
+    transform: scale(1.03);
+    /* transition: 0.3s ease; */
+    border: 2px solid green;
+    box-shadow: 5px 5px 20px green;
+}
+
 .card-f1 h3,
 .card-f2 h3,
 .card-f3 h3 {
@@ -251,21 +322,21 @@ a {
     justify-content: center;
     margin: -125px 0 0 0;
     object-fit: cover;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
 
 }
 
 .quote img {
-    height: 236px;
-    width: 385px;
-    object-fit: cover;
+    height: 226px;
+    width: 390px;
+    /* object-fit: cover; */
     /* display: block; */
     vertical-align: bottom;
-    margin:77px 0 -75px 0
-    /* clip-path: inset(0 0 30px 0); */
+    margin: 77px 0 -61px 0
+        /* clip-path: inset(0 0 30px 0); */
 }
 
-footer{
+footer {
     color: gold;
     display: flex;
     justify-content: center;
@@ -280,42 +351,42 @@ footer{
 
 @media (max-width: 768px) {
 
-    body{
+    body {
         /* background-position: center; */
         background-size: cover;
         /* height: auto; */
         min-height: 100vh;
     }
 
-    nav{
+    nav {
         padding: 14px 8px;
         overflow-x: auto;
         white-space: nowrap;
     }
 
-    nav a{
+    nav a {
         margin: 0 10px;
         font-size: 14px;
     }
 
-    .head h1{
+    .head h1 {
         font-size: 34px;
         text-align: center;
         margin-top: 20px;
     }
 
-    .head h1::after{
+    .head h1::after {
         width: 240px;
     }
 
-    .head p{
+    .head p {
         width: 90%;
         font-size: 14px;
         text-align: center;
         margin-top: 12px;
     }
 
-    .cards{
+    .cards {
         flex-direction: column;
         align-items: center;
         gap: 25px;
@@ -324,37 +395,37 @@ footer{
 
     .card-f1,
     .card-f2,
-    .card-f3{
+    .card-f3 {
         width: 260px;
         height: 390px;
     }
 
     .card-f1 .card-image,
     .card-f2 .card-image,
-    .card-f3 .card-image{
+    .card-f3 .card-image {
         height: 245px;
     }
 
     .card-f1 h3,
     .card-f2 h3,
-    .card-f3 h3{
+    .card-f3 h3 {
         font-size: 20px;
     }
 
     .card-f1 p,
     .card-f2 p,
-    .card-f3 p{
+    .card-f3 p {
         font-size: 15px;
         padding: 0 10px;
     }
 
-    .quote{
-        margin-top: -80px;
+    /* .quote { */
+        /* margin-top: -80px; */
         /* margin-bottom: 80px; */
-    }
+    /* } */
 
-    .quote img{
+    .quote img {
         width: 300px;
-        height: 230px;
+        height: 200px;
     }
 }
