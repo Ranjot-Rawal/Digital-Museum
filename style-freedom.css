@@ -256,12 +256,12 @@ a {
 }
 
 .quote img {
-    height: 400px;
-    width: 510px;
+    height: 236px;
+    width: 385px;
     object-fit: cover;
     /* display: block; */
     vertical-align: bottom;
-    margin-bottom: -125px;
+    margin:77px 0 -75px 0
     /* clip-path: inset(0 0 30px 0); */
 }
 
@@ -350,10 +350,11 @@ footer{
 
     .quote{
         margin-top: -80px;
+        /* margin-bottom: 80px; */
     }
 
     .quote img{
         width: 300px;
-        height: auto;
+        height: 230px;
     }
 }
