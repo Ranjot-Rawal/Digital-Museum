@@ -137,14 +137,14 @@ nav a.active::after {
     background: var(--gold);
 } */
 
-/* Hero Section */
-.hero {
+/* Container Section */
+.container {
     padding-top: 140px;
     text-align: center;
     position: relative;
 }
 
-.hero::before {
+.container::before {
     content: '';
     position: absolute;
     top: 0;
@@ -152,10 +152,9 @@ nav a.active::after {
     right: 0;
     height: 400px;
     background: radial-gradient(ellipse at center top, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-    pointer-events: none;
 }
 
-.hero h1 {
+.container h1 {
     font-family: 'Cinzel', serif;
     font-size: 72px;
     font-weight: 700;
@@ -165,7 +164,7 @@ nav a.active::after {
     position: relative;
 }
 
-.hero-divider {
+.container-divider {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -173,20 +172,20 @@ nav a.active::after {
     margin-bottom: 25px;
 }
 
-.hero-divider .line {
+.container-divider .line {
     width: 100px;
     height: 2px;
     background: var(--gold);
 }
 
-.hero-divider .dot {
+.container-divider .dot {
     width: 10px;
     height: 10px;
     background: var(--gold);
     border-radius: 50%;
 }
 
-.hero p {
+.container p {
     font-size: 20px;
     color: var(--text-off);
     font-weight: 300;
@@ -198,7 +197,6 @@ nav a.active::after {
     position: absolute;
     width: 40px;
     height: 40px;
-    pointer-events: none;
 }
 
 .corner-ornament.top-left {
@@ -336,7 +334,7 @@ nav a.active::after {
     font-family: 'Inter', sans-serif;
     font-size: 15px;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.6s ease;
 }
 
 .form-group input:focus,
@@ -351,7 +349,7 @@ nav a.active::after {
 
 .form-group textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 200px;
 }
 
 .submit-btn {
@@ -365,7 +363,7 @@ nav a.active::after {
     font-size: 15px;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition:0.3s ease;
     margin-top: 10px;
 }
 
@@ -379,7 +377,6 @@ nav a.active::after {
     position: absolute;
     width: 40px;
     height: 40px;
-    pointer-events: none;
 }
 
 .form-ornament.bl {
@@ -450,7 +447,7 @@ footer {
         flex-wrap: wrap;
     }
 
-    .hero h1 {
+    .container h1 {
         font-size: 48px;
     }
 }
@@ -474,7 +471,7 @@ footer {
         gap: 20px;
     }
 
-    .hero h1 {
+    .container h1 {
         font-size: 36px;
     }
 
