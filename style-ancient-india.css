@@ -129,12 +129,14 @@ a {
 .card-a2 {
     width: 400px;
     height: 400px;
-    /* background:
-        linear-gradient(rgba(80, 50, 0, .65), rgba(25, 15, 0, .92));
+    background:linear-gradient(rgba(80, 50, 0, .65), rgba(25, 15, 0, .92));
     border: 2px solid #d4af37;
-    box-shadow: 0 0 25px rgba(212, 175, 55, .25); */
-    background: linear-gradient(rgba(113, 31, 100, 0.38),rgba(90, 1, 76, 0.35));
-    border: 2px solid #d437ca;
+
+    
+    /* background: linear-gradient(rgba(113, 31, 100, 0.38),rgba(90, 1, 76, 0.35));
+    border: 2px solid #d437ca; */
+
+    box-shadow: 0 0 25px rgba(212, 175, 55, .25);
     transition: 0.3s;
     clip-path: polygon(8% 0,
             92% 0,
@@ -252,7 +254,8 @@ a {
 .png2 img {
     width: 375px;
     height: 222px;
-    filter: drop-shadow(0 0 7px #ff48d7);
+    filter: drop-shadow(0 0 10px #d4af37);
+    /* filter: drop-shadow(0 0 7px #ff48d7); */
 }
 
 .png3 img {
@@ -329,4 +332,14 @@ footer {
     justify-content: center;
     width: 102vw;
     }
+}
+
+
+
+.card-a2{
+    background: linear-gradient(rgba(113, 31, 100, 0.38),rgba(90, 1, 76, 0.35));
+    border: 2px solid #d437ca;
+}
+.png2 img{
+    filter: drop-shadow(0 0 10px #d437ca);
 }
