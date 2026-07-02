@@ -6,11 +6,10 @@
 }
 
 body {
-    /* background: linear-gradient(135deg, #020c25, #060f1d); */
     background-color: black;
     color: white;
     min-height: 100vh;
-    width: 100vw;
+    overflow-x: hidden;
 }
 
 /* Navigation bar */
@@ -54,7 +53,7 @@ nav a.active::after {
     border-radius: 2px;
 }
 
-/* mains conatins index page,s History Nexus and a line with a background pic */
+/* mains */
 
 .mains {
     height: 100vh;
@@ -63,7 +62,7 @@ nav a.active::after {
     justify-content: center;
     align-items: left;
     text-align: left;
-    background: url("PICTURES/Extra Pics/Project Index Pic.jpg") center/cover;
+    background: url("MAIN PICS/Project Index Pic.jpg") center/cover;
     position: relative;
     z-index: 500;
 }
@@ -75,21 +74,18 @@ nav a.active::after {
     inset: 0;
     /*left top bottom right all are 0 which means the black transparent new background will cover the whole mains ultimately resulting in making the background pic a lil bit dark*/
     background: rgba(0, 0, 0, 0.55);
-    /*alpha in rgba set to 0.55 means the black transparent bg in 55% opaque*/
+    /*alpha in rgba set to 0.55 means the black transparent bg is 55% opaque*/
 }
 
 .mains h1,
 .mains .content,
 .mains .upper {
-    /* position:relative; */
     z-index: 1;
     /* This will help as the black background will be under the History Nexus and the content paragraph*/
 }
 
 .mains h1 {
-    /* font-family:'Times New Roman', Times, serif; */
     font-size: 120px;
-    /* color:#d7d3c8; */
     text-shadow: 0 0 50px rgba(220, 207, 24, 0.7);
     transition: 0.4s;
     display: inline-block;
@@ -97,7 +93,6 @@ nav a.active::after {
     font-family: Georgia, "Times New Roman", serif;
     font-weight: 500;
     line-height: 0.9;
-    letter-spacing: 0;
     margin-left: 30px;
     width: 200px;
 }
@@ -109,29 +104,17 @@ nav a.active::after {
 .mains .upper {
     margin: 0 0 10px;
     font-size: 0.78rem;
-    font-weight: 800;
+    font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: gold;
     margin-left: 30px;
-    /* transition: 0.3s; */
     width: 300px;
 }
 
-/* .mains .upper:hover {
-    transform: scale(1.09);
-} */
-
 .mains .content {
-    /* transition: 0.4s; */
     margin-left: 30px;
 }
-/* 
-.mains .content:hover {
-    transform: scale(1.04)
-} */
-
-/* Content is the line :-- Explore History, Heritage and Space */
 
 .content p {
     font-size: 24px;
@@ -139,16 +122,11 @@ nav a.active::after {
     color: gold;
 }
 
-/* Container exists in every page except contact page , it contains cards */
+/* Container */
 
-.container {
-    /* background-image: url("z-picture.png");
-    background-size: cover; */
-    padding: 70px;
-}
 
 .container-i {
-    background-image: url("z-picture.png");
+    background-image: url("MAIN PICS/index-card-container.png");
     background-size: cover;
     padding: 70px;
     border: 3px solid rgb(144, 129, 43);
@@ -193,29 +171,27 @@ nav a.active::after {
     /* z-index: 1; */
 }
 
-/* I give  diff set of card(not cards) to evry page , only diff for now is their hover shadow glow */
+/* Cards */
 
 .cards {
+    width: 100%;
     display: flex;
-    justify-content: center;
     gap: 35px;
     flex-wrap: wrap;
     padding-top: 30px;
     flex-direction: column;
-    align-items: center;
+    /* align-items: stretch; */
 }
 
 /* Home page Card */
 
 .card {
-    width: 75vw;
     padding: 30px;
     border-radius: 20px;
     background: rgba(255, 255, 255,0);
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: 0.3s;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-    margin-right: 30px;
 }
 
 .card:hover {
@@ -233,83 +209,13 @@ a {
     text-decoration: none;
 }
 
-/* Gallery Page Card */
-
-.card-g {
-    width: 320px;
-    padding: 30px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: 0.3s;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-}
-
-.card-g:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 35px rgba(11, 232, 236, 0.4);
-}
-
-/* Ancient India Page Card */
-
-.card-a {
-    width: 320px;
-    padding: 30px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: 0.3s;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-}
-
-.card-a:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 35px rgba(236, 123, 11, 0.4);
-}
-
-
-/* Freedom Fighters Page Card */
-
-.card-f {
-    width: 320px;
-    padding: 30px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: 0.3s;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-}
-
-.card-f:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 35px rgba(232, 11, 236, 0.4);
-}
-
-
-/* /Space Museum Card */
-
-.card-s {
-    width: 320px;
-    padding: 30px;
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: 0.3s;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
-}
-
-.card-s:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 35px rgba(28, 179, 23, 0.4);
-}
-
-/* Content lines */
-
 .content2 p {
     color: #ddd;
     line-height: 1.5;
     width: 250px;
 }
+
+/* TIMELINE BAND */
 
 .timeline-band {
     height: 50%;
@@ -322,9 +228,8 @@ a {
     color: #000000;
     padding: 28px;
     border: 5px solid rgb(101, 91, 1);
-    background: url(z-pic2.png);
+    background: url("MAIN PICS/timeline-band.png");
     background-size: 100%;
-    /* box-shadow: 0 8px 25px rgba(0,0,0,0),0 0 10px rgba(255,196,0,1); */
     z-index: 4;
 }
 
@@ -335,11 +240,10 @@ a {
 }
 
 .timeline strong{
-    padding-top: 0;
+    padding-top: 0px;
 }
 
 .timeline-band h2 {
-    /* max-width: 50px; */
     margin: 0;
     display: flex;
     align-items: center;
@@ -348,8 +252,6 @@ a {
     font-size: 30px;
     line-height: 0.96;
     font-weight: 800;
-    /* padding-top: 100px; */
-
 }
 
 .timeline-upper{
@@ -357,8 +259,6 @@ a {
 }
 
 .timeline-below{
-    /* border: 2px solid black; */
-    
     border-top: 2px solid rgb(107, 95, 29);
     border-radius: 10px;
     padding-left: 5px;
@@ -372,7 +272,6 @@ a {
 .timeline .band-hover{
     transition: 0.3s;
     box-shadow: 4px 2px 1px #020617;
-    /* box-shadow: 20px 8px 20px rgba(212, 188, 49, 0.6); */
 }
 
 .timeline .band-hover:hover{
@@ -382,7 +281,7 @@ a {
 
 /* Artifact */
 .png{
-    background-image: url(z-pic4.png);
+    background-image: url("MAIN PICS/artifact.png");
     height: 600px;
     width: 512px;
     background-size: cover;
@@ -392,10 +291,16 @@ a {
 }
 
 /* World Map */
+
+.world {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
 .worldmap{
-    background-image: url(z-pic5.png);
+    background-image: url("MAIN PICS/world-map.png");
     background-size: cover;
-    margin-left: 500px;
     height: 400px;
     width: 550px;
 }
@@ -404,12 +309,11 @@ a {
 .botpic{
     height: 200px;
     width: 200px;
-    background-image:url(aibot4.png) ;
+    background-image:url("MAIN PICS/aibot.png") ;
     background-size: cover;
     position: fixed;
     bottom: 30px;
     right: 10px;
-    clip-path: inset(2px);
     transition: 0.3s;
     z-index: 9;
 
@@ -421,7 +325,7 @@ a {
 .bubble{
     height: 100px;
     width: 200px;
-    background-image: url(Bubble.png);
+    background-image: url("MAIN PICS/bubble.png");
     background-size: cover;
     position: fixed;
     bottom: 1px;
@@ -429,7 +333,7 @@ a {
     z-index: 7;
 }
 
-/* Footer(On Home and Space Museum Page) */
+/* Footer */
 
 footer {
     text-align: center;
@@ -442,283 +346,32 @@ footer {
     border-top:2px solid gold
 }
 
-/* colors of title pages in cards */
 
-.Freedom {
-    color: #650f5e;
-}
 
-.Gallery {
-    color: #420739;
-}
+/* MOBILE VIEW */
 
-.ancient {
-    color: #563506;
-}
-
-.Space {
-    color: #0d470b;
-}
-
-.contact {
-    color: #f4f7f9;
-}
-
-/* Submit Button in Contact */
-
-.submit button {
-    margin: 100px;
-    height: 50px;
-    width: 100px;
-    font-size: 20px;
-    transition: 0.4s;
-    box-shadow: 0 15px 30px 20px rgb(240, 230, 230);
-}
-
-.submit button:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 15px 30px 20px rgb(39, 206, 228);
-}
-
-/* AI */
-.chat-section {
-    width: 500px;
-    margin: 50px auto;
-    background: #071a35;
-    border-radius: 20px;
-    padding: 25px;
-    color: white;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
-}
-
-.chat-section h2 {
-    text-align: center;
-    color: gold;
-    margin-bottom: 20px;
-}
-
-.chat-box {
-    height: 350px;
-    overflow-y: auto;
-    background: #081523;
-    border-radius: 15px;
-    padding: 15px;
-}
-
-.bot,
-.user {
-    max-width: 75%;
-    padding: 12px;
-    margin: 12px 0;
-    border-radius: 15px;
-    animation: fade .3s;
-}
-
-.bot {
-    background: #234d7d;
-}
-
-.user {
-    background: gold;
-    color: black;
-    margin-left: auto;
-}
-
-select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 20px;
-    border-radius: 8px;
-}
-
-.notcontactbutton button {
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px;
-    background: gold;
-    color: black;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.notcontactbutton button:hover {
-    background: #ffdf5e;
-}
-
-@keyframes fade {
-
-    from {
-        opacity: 0;
-        transform: translateY(15px);
+@media (max-width: 1500px){
+    .timeline-band{
+        width: 90vw;
+        margin: 0 0 0 0;
     }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    .time-container{
+        display: flex;
+        justify-content: center;
     }
-
-}
-
-.exit-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-
-    background: #d7a23b;
-    color: black;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    padding: 12px 20px;
-    border-radius: 30px;
-
-    transition: 0.3s;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, .3);
-
-    z-index: 999;
-}
-
-.exit-btn:hover {
-    background: gold;
-    transform: translateY(-3px);
-}
-
-/* Mobile View*/
-/* @media screen and (max-width: 1000px) {
-
-    nav {
-        overflow-x: auto;
-        white-space: nowrap;
-        text-align: left;
+    .png{
+        display: none;
     }
-
-    nav a {
-        display: inline-block;
-        margin: 0 10px;
-    }
-
-    .mains {
-        height: 40vh;
-        padding: 10px;
-    }
-
-    .mains h1 {
-        font-size: 30px;
-    }
-
-    .content p {
-        font-size: 15px;
-        padding: 0 10px;
-    }
-
-    .container {
-        padding: 40px 15px;
-    }
-
-    .cards {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .card {
-        min-width: 180p;
-        max-width: 290px;
-        padding: 20px;
-    }
-
-    .card-g {
-        width: 258px;
-        padding: 23px;
-    }
-
-    .card-a {
-        width: 258px;
-        padding: 23px;
-    }
-
-    .card-f {
-        width: 258px;
-        padding: 23px;
+    .worldmap{
         margin: 0;
     }
-
-    .card-s {
-        width: 258px;
-        padding: 23px;
+    .world{
+        display: flex;
+        justify-content: center;
     }
-
-    .card h2 {
-        font-size: 22px;
-    }
-
-    .card-g h3 {
-        font-size: 18px;
-    }
-
-    .card-a h3 {
-        font-size: 18px;
-    }
-
-    .card-f h3 {
-        font-size: 18px;
-        min-height: 27px;
-    }
-
-    .card-s h3 {
-        font-size: 18px;
-        min-height: 30px;
-    }
-
-    .content2 p {
-        font-size: 15px;
-    }
-
-
-    .submit button {
-        width: 80%;
-        max-width: 250px;
-        margin: 30px auto;
-        display: block;
-        font-size: 18px;
-    }
-
-    footer {
-        font-size: 14px;
-        padding: 20px;
-        letter-spacing: 1px;
-    }
-
-    .submit button {
-        width: 100px;
-        font-size: 15px;
-    }
-} */
-
-
-/* ===========================
-   MOBILE RESPONSIVE DESIGN
-=========================== */
-
-@media (max-width:768px){
-
-/* Navbar */
-
-/* nav{
-    padding:15px 10px;
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:10px;
 }
 
-nav a{
-    margin:5px;
-    font-size:15px;
-} */
+@media (max-width:768px){
 
 nav{
         overflow-x: auto;
@@ -741,7 +394,7 @@ nav a {
 }
 
 .mains h1{
-    font-size:62px;
+    font-size:50px;
     width:auto;
     margin-left:0;
     line-height:0.95;
@@ -800,22 +453,17 @@ nav a {
 /* Timeline */
 
 .timeline-band{
-    min-width: 90px;
-    width:70%;
-    height:70%;
-    margin: 50px auto;
-
-    /* margin-left: 100px; */
-
+    width: 90vw;
+    margin: 0 0 0 0;
+    height:470px;
     display:flex;
     flex-direction:column;
-
-    padding:18px;
     gap:18px;
-
     background-size:cover;
     z-index: 1;
-
+    width:95%;
+    padding:5px;
+    margin:auto;
 
 }
 
@@ -826,6 +474,10 @@ nav a {
 .timeline-band h2{
     font-size:24px;
     text-align:center;
+}
+
+.timeline{
+    display:block;
 }
 
 .timeline-upper{
@@ -885,10 +537,10 @@ nav a {
 /* Floating Robot */
 
 .botpic{ 
-    width:110px;
     height:110px;
-    right:54px;
-    bottom: 80px;
+    width:80px;
+    right:35px;
+    bottom:10px;
 }
 
 .bubble{
@@ -927,59 +579,6 @@ footer{
     }
 
 }
-
-
-@media (max-width: 768px){
-
-.timeline-band{
-    width:95%;
-    padding:20px;
-    margin:auto;
-}
-
-.timeline{
-    display:block;
-}
-
-.png{
-    display:none; /* Hide artifact on phones */
-}
-
-.botpic{
-    width:80px;
-    right:10px;
-    bottom:10px;
-}
-
-nav{
-    overflow-x:auto;
-    white-space:nowrap;
-    justify-content:flex-start;
-}
-
-}
-
-@media (max-width: 1000px){
-    .timeline-band{
-        width: 70vw;
-        margin: 0 0 0 0;
-    }
-    .time-container{
-        display: flex;
-        justify-content: center;
-    }
-    .png{
-        display: none;
-    }
-    .worldmap{
-        margin: 0;
-    }
-    .world{
-        display: flex;
-        justify-content: center;
-    }
-}
-
 
 /* --- Scrollbar Styling --- */
 ::-webkit-scrollbar {

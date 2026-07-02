@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to bottom, #0d1b2a, #1b263b, #415a77);
+    color: white;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.chat-section {
+    width: 500px;
+    margin: 50px auto;
+    background: #071a35;
+    border-radius: 20px;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .4);
+}
+
+.chat-section h2 {
+    text-align: center;
+    color: gold;
+    margin-bottom: 20px;
+}
+
+.chat-box {
+    height: 350px;
+    overflow-y: auto;
+    background: #081523;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.bot,
+.user {
+    max-width: 75%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 15px;
+    animation: fade .3s;
+}
+
+.bot {
+    background: #234d7d;
+}
+
+.user {
+    background: gold;
+    color: black;
+    margin-left: auto;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+.ask{
+    display: flex;
+    justify-content: center;
+}
+
+.ask-btn {
+    width: 50%;
+    margin-top: 10px;
+    padding: 12px;
+    background: gold;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 0 0 115px;
+}
+
+.ask-btn:hover {
+    background: #ffdf5e;
+}
+
+/* @keyframes fade {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+} */
+
+.exit-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    background: #d7a23b;
+    color: black;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 12px 20px;
+    border-radius: 30px;
+
+    transition: 0.3s;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, .3);
+
+    z-index: 999;
+}
+
+.exit-btn:hover {
+    background: gold;
+    transform: translateY(-3px);
+}

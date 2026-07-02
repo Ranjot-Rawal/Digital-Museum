@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-    background-image: url(ancient-body.png);
+    background-image: url("MAIN PICS/ancient-body.png");
     height: 100%;
 }
 
@@ -111,8 +111,17 @@ a {
     border: 2px solid #2ec4b6;
     box-shadow: 0 0 25px rgba(46, 196, 182, .25);
     transition: 0.3s;
+    clip-path: polygon(8% 0,
+            92% 0,
+            100% 8%,
+            100% 92%,
+            92% 100%,
+            8% 100%,
+            0 92%,
+            0 8%);
 }
-.card-a1:hover{
+
+.card-a1:hover {
     transform: scale(1.06);
     box-shadow: -25px 25px 30px rgba(46, 196, 182, .25);
 }
@@ -120,13 +129,24 @@ a {
 .card-a2 {
     width: 400px;
     height: 400px;
-    background:
+    /* background:
         linear-gradient(rgba(80, 50, 0, .65), rgba(25, 15, 0, .92));
     border: 2px solid #d4af37;
-    box-shadow: 0 0 25px rgba(212, 175, 55, .25);
+    box-shadow: 0 0 25px rgba(212, 175, 55, .25); */
+    background: linear-gradient(rgba(113, 31, 100, 0.38),rgba(90, 1, 76, 0.35));
+    border: 2px solid #d437ca;
     transition: 0.3s;
+    clip-path: polygon(8% 0,
+            92% 0,
+            100% 8%,
+            100% 92%,
+            92% 100%,
+            8% 100%,
+            0 92%,
+            0 8%)
 }
-.card-a2:hover{
+
+.card-a2:hover {
     transform: scale(1.06);
     box-shadow: 0px 35px 30px rgba(212, 175, 55, .25);
 }
@@ -139,8 +159,17 @@ a {
     border: 2px solid #8a5cf6;
     box-shadow: 0 0 25px rgba(79, 44, 159, 0.705);
     transition: 0.3s;
+    clip-path: polygon(8% 0,
+            92% 0,
+            100% 8%,
+            100% 92%,
+            92% 100%,
+            8% 100%,
+            0 92%,
+            0 8%);
 }
-.card-a3:hover{
+
+.card-a3:hover {
     transform: scale(1.06);
     box-shadow: 25px 25px 30px rgba(138, 92, 246, .35);
 }
@@ -172,7 +201,7 @@ a {
     color: wheat;
 }
 
-.svg1 img{
+.svg1 img {
     border: 2px solid gold;
     width: 63px;
     height: 63px;
@@ -180,12 +209,13 @@ a {
     border-radius: 50%;
     transition: 0.3s ease;
 }
-.card-a1:hover .svg1 img{
+
+.card-a1:hover .svg1 img {
     transform: scale(1.06);
     box-shadow: -5px 5px 20px gold;
 }
 
-.svg2 img{
+.svg2 img {
     border: 2px solid gold;
     width: 63px;
     height: 63px;
@@ -193,38 +223,46 @@ a {
     border-radius: 50%;
     transition: 0.3s ease;
 }
-.card-a2:hover .svg2 img{
+
+.card-a2:hover .svg2 img {
     transform: scale(1.06);
     box-shadow: 0px 8px 20px gold;
 }
 
-.svg3 img{
+.svg3 img {
     border: 2px solid gold;
-    width: 63px;
+    width: 73px;
     height: 63px;
     margin: 30px 0 0 0;
     border-radius: 50%;
     transition: 0.3s ease;
 }
-.card-a3:hover .svg3 img{ 
+
+.card-a3:hover .svg3 img {
     transform: scale(1.06);
     box-shadow: 5px 5px 20px gold;
 }
 
-.png1 img{
+.png1 img {
     width: 340px;
-    height: 200px'
-}
-.png2 img{
-    width: 375px;
-    height: 222px'
-}
-.png3 img{
-    width: 375px;
-    height: 222px;
+    height: 200px;
+    filter: drop-shadow(0 0 10px #27c6ea);
 }
 
-footer{
+.png2 img {
+    width: 375px;
+    height: 222px;
+    filter: drop-shadow(0 0 7px #ff48d7);
+}
+
+.png3 img {
+    width: 375px;
+    height: 222px;
+    filter: drop-shadow(0 0 10px #8a5cf6);
+    /* mix-blend-mode: screen; */
+}
+
+footer {
     color: gold;
     display: flex;
     justify-content: center;
@@ -233,4 +271,62 @@ footer{
     height: 10vh;
     margin-top: 20px;
     width: 100vw;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    nav {
+        overflow-x: auto;
+        white-space: nowrap;
+        text-align: center;
+        padding: 15px 10px;
+        /* display: flex; */
+        /* justify-content: center; */
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0 10px;
+        font-size: 15px;
+    }
+
+    .head h1 {
+        font-size: 30px;
+        text-align: center;
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    .head p {
+        font-size: 15px;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .cards{
+        /* flex-wrap: wrap; */
+        flex-direction: column;
+        gap: 30px;
+    }
+    .card-a1, .card-a2, .card-a3 {
+        height: 90vh;
+        width: 75%;
+        max-width: 400px;
+        height: auto;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    .png1 img, .png2 img, .png3 img {
+        width: 100%;
+        height: auto;
+    }
+    .cards a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 102vw;
+    }
 }

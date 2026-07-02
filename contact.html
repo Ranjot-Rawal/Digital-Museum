@@ -1,34 +1,117 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Contact</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div style="background:linear-gradient(135deg,rgb(32, 135, 190),rgb(239, 9, 9)); min-height: 100vh;">
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="ancient.html">Ancient India</a>
-                <a href="freedom.html">Freedom Fighters</a>
-                <a href="space.html">Space Museum</a>
-                <a href="contact.html" class="active">Contact</a>
-            </nav>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Chronicle Nexus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style-contact.css">
+</head>
+<body>
 
-            <div class="container">
-                <h1 class="contact">Contact Us</h1>
-
-                <form>
-                    <input type='text' placeholder='Name' style='width:100%;padding:10px'><br><br>
-                    <input type='email' placeholder='Email' style='width:100%;padding:10px'><br><br>
-                    <textarea placeholder='Message' style='width:100%;height:120px'></textarea>    
-                    <div class="submit" align="center">
-                        <button type="submit">Submit</button>
-                    </div>   
-                </form>
-            </div>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="ancient-india.html">Ancient India</a>
+            <a href="freedom-fighters.html">Freedom Fighters</a>
+            <a href="space-museum.html">Space Museum</a>
+            <a href="contact.html" class="active">Contact</a>
         </div>
-    </body>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        
+        <h1>GET IN TOUCH</h1>
+        
+        <div class="hero-divider">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+        </div>
+        
+        <p>We'd love to hear from you. Reach out for inquiries, collaborations, or feedback.</p>
+    </section>
+
+    <!-- Info Cards -->
+    <section class="info-cards">
+        <div class="info-card">
+            <div class="card-icon">✉️</div>
+            <h3>Email Us</h3>
+            <p>hello@chroniclenexus.com</p>
+            <p class="secondary">support@chroniclenexus.com</p>
+        </div>
+        
+        <div class="info-card">
+            <div class="card-icon">📍</div>
+            <h3>Visit Us</h3>
+            <p>Sector 94, JLPL, Mohali</p>
+            <p class="secondary">Punjab, India - 140307</p>
+        </div>
+        
+        <div class="info-card">
+            <div class="card-icon">📞</div>
+            <h3>Call Us</h3>
+            <p>+91 788XX XXXXX</p>
+            <p class="secondary">Mon - Sat | 10:00 AM - 6:00 PM</p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="form-section">
+        <div class="form-container">
+            <h2>SEND US A MESSAGE</h2>
+            <div class="form-divider"></div>
+            
+            <form action="#" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Michael Jackson" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="michael@example.com" required>
+                    </div>
+                </div>
+                
+                <div class="form-group full" style="margin-bottom: 20px;">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="General Inquiry">
+                </div>
+                
+                <div class="form-group full" style="margin-bottom: 20px;">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                <div style="clear: both;"></div>
+            </form>
+            
+            <div class="form-ornament bl"></div>
+            <div class="form-ornament br"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">
+            <span>CHRONICLE NEXUS</span> | A Digital Museum Experience
+        </div>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="Instagram">📷</a>
+        </div>
+        
+        <p class="copyright">© 2026 Chronicle Nexus. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>

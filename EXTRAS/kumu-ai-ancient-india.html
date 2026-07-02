@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient India | Chronicle Nexus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --gold-dim: #b8941f;
+            --bg-dark: #050505;
+            --text-white: #ffffff;
+            --text-off: #cccccc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ========== BACKGROUND ========== */
+        .page-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(139, 90, 43, 0.1) 0%, transparent 50%),
+                linear-gradient(180deg, #0a0805 0%, #050505 100%);
+        }
+
+        .page-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 40%;
+            height: 60%;
+            background: url('https://images.unsplash.com/photo-1595658658401-1b6e9f5d8b6c?w=800') no-repeat left top;
+            background-size: cover;
+            opacity: 0.25;
+            mask-image: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            filter: sepia(0.6) saturate(0.5);
+        }
+
+        .page-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 60%;
+            background: url('https://images.unsplash.com/photo-1548013146-72479768bada?w=800') no-repeat right top;
+            background-size: cover;
+            opacity: 0.2;
+            mask-image: linear-gradient(-90deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            -webkit-mask-image: linear-gradient(-90deg, rgba(0,0,0,0.8) 0%, transparent 100%);
+            filter: sepia(0.6) saturate(0.5);
+        }
+
+        /* ========== NAVIGATION ========== */
+        nav {
+            position: relative;
+            z-index: 100;
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-off);
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 8px;
+        }
+
+        nav a:hover {
+            color: var(--gold);
+        }
+
+        nav a.active {
+            color: var(--gold);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 2px;
+            background: var(--gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            position: relative;
+        }
+
+        .hero-ornament-top {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .hero-ornament-top .line {
+            width: 80px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+        }
+
+        .hero-ornament-top .diamond {
+            width: 8px;
+            height: 8px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+        }
+
+        .hero-ornament-top .dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .hero-ornament-top .dots span {
+            width: 4px;
+            height: 4px;
+            background: var(--gold-dim);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 80px;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 10px;
+            text-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+            margin-bottom: 25px;
+        }
+
+        .hero-divider-mid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .hero-divider-mid .line {
+            width: 120px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+        }
+
+        .hero-divider-mid .center-icon {
+            width: 12px;
+            height: 12px;
+            border: 1px solid var(--gold);
+            transform: rotate(45deg);
+            position: relative;
+        }
+
+        .hero-divider-mid .center-icon::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
+            background: var(--gold);
+            transform: rotate(0deg);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-off);
+            font-weight: 300;
+            letter-spacing: 1px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ========== CARDS GRID ========== */
+        .cards-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px 80px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        /* ========== BASE CARD ========== */
+        .empire-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .empire-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .card-border {
+            position: relative;
+            border: 2px solid var(--card-accent);
+            border-radius: 8px;
+            padding: 40px 25px 180px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--card-bg-top) 0%, var(--card-bg-bottom) 100%);
+            overflow: hidden;
+        }
+
+        /* Corner ornaments */
+        .card-border::before,
+        .card-border::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border: 2px solid var(--card-accent);
+            z-index: 2;
+        }
+
+        .card-border::before {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+            border-top-left-radius: 10px;
+        }
+
+        .card-border::after {
+            top: -2px;
+            right: -2px;
+            border-left: none;
+            border-bottom: none;
+            border-top-right-radius: 10px;
+        }
+
+        .corner-bottom-left,
+        .corner-bottom-right {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            border: 2px solid var(--card-accent);
+            bottom: -2px;
+            z-index: 2;
+        }
+
+        .corner-bottom-left {
+            left: -2px;
+            border-right: none;
+            border-top: none;
+            border-bottom-left-radius: 10px;
+        }
+
+        .corner-bottom-right {
+            right: -2px;
+            border-left: none;
+            border-top: none;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Inner decorative corners */
+        .inner-deco {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border: 1px solid var(--card-accent-dim);
+            opacity: 0.6;
+            z-index: 2;
+        }
+
+        .inner-deco.tl { top: 8px; left: 8px; border-right: none; border-bottom: none; }
+        .inner-deco.tr { top: 8px; right: 8px; border-left: none; border-bottom: none; }
+        .inner-deco.bl { bottom: 8px; left: 8px; border-right: none; border-top: none; }
+        .inner-deco.br { bottom: 8px; right: 8px; border-left: none; border-top: none; }
+
+        /* Card background image */
+        .card-bg-image {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .card-bg-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(0.3) saturate(1.2);
+        }
+
+        .card-bg-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                var(--card-bg-top) 0%,
+                var(--card-overlay) 50%,
+                var(--card-bg-bottom) 100%
+            );
+        }
+
+        /* Card content */
+        .card-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        /* Icon */
+        .card-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, rgba(212,175,55,0.2) 0%, transparent 70%);
+            position: relative;
+        }
+
+        .card-icon::before {
+            content: '';
+            position: absolute;
+            inset: -5px;
+            border: 1px solid var(--gold-dim);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+
+        .card-icon img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5));
+        }
+
+        .card-icon .emoji {
+            font-size: 32px;
+            filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5));
+        }
+
+        /* Title */
+        .card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 2px;
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+
+        /* Divider */
+        .card-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .card-divider .line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+        }
+
+        .card-divider .diamond {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+        }
+
+        /* Description */
+        .card-desc {
+            font-size: 15px;
+            color: var(--text-off);
+            line-height: 1.7;
+            font-weight: 300;
+            padding: 0 10px;
+        }
+
+        /* Bottom ornament */
+        .bottom-ornament {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+
+        .bottom-ornament svg {
+            width: 45px;
+            height: 45px;
+            filter: drop-shadow(0 0 8px var(--card-glow));
+        }
+
+        /* Bottom image area */
+        .card-bottom-image {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 160px;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .card-bottom-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center bottom;
+            opacity: 0.8;
+            mask-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, transparent 60%);
+            -webkit-mask-image: linear-gradient(0deg, rgba(0,0,0,1) 0%, transparent 60%);
+        }
+
+        /* ========== CARD THEMES ========== */
+
+        /* Indus Valley - Teal */
+        .card-indus {
+            --card-accent: #2d9b8e;
+            --card-accent-dim: #1a5e56;
+            --card-bg-top: rgba(10, 25, 22, 0.95);
+            --card-bg-bottom: rgba(5, 15, 12, 0.98);
+            --card-overlay: rgba(45, 155, 142, 0.15);
+            --card-glow: rgba(45, 155, 142, 0.4);
+        }
+
+        /* Maurya - Gold/Brown */
+        .card-maurya {
+            --card-accent: #c4943a;
+            --card-accent-dim: #8b6914;
+            --card-bg-top: rgba(25, 18, 5, 0.95);
+            --card-bg-bottom: rgba(15, 10, 2, 0.98);
+            --card-overlay: rgba(196, 148, 58, 0.15);
+            --card-glow: rgba(196, 148, 58, 0.4);
+        }
+
+        /* Gupta - Purple */
+        .card-gupta {
+            --card-accent: #7c4dff;
+            --card-accent-dim: #4a148c;
+            --card-bg-top: rgba(20, 10, 35, 0.95);
+            --card-bg-bottom: rgba(10, 5, 20, 0.98);
+            --card-overlay: rgba(124, 77, 255, 0.15);
+            --card-glow: rgba(124, 77, 255, 0.4);
+        }
+
+        /* ========== BOTTOM PAGE ORNAMENT ========== */
+        .page-bottom-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px 20px 60px;
+        }
+
+        .page-bottom-ornament .line {
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+        }
+
+        .page-bottom-ornament .center-circle {
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--gold-dim);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .page-bottom-ornament .center-circle::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid var(--gold-dim);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .page-bottom-ornament .center-circle svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--gold);
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero h1 {
+                font-size: 56px;
+            }
+            
+            .nav-container {
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+                letter-spacing: 4px;
+            }
+            
+            .nav-container {
+                gap: 20px;
+            }
+            
+            nav a {
+                font-size: 13px;
+            }
+            
+            .cards-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-bg"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="ancient.html" class="active">Ancient India</a>
+            <a href="freedom.html">Freedom Fighters</a>
+            <a href="space.html">Space Museum</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-ornament-top">
+            <div class="dots">
+                <span></span>
+                <span></span>
+            </div>
+            <div class="line"></div>
+            <div class="diamond"></div>
+            <div class="line"></div>
+            <div class="dots">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <h1>ANCIENT INDIA</h1>
+
+        <div class="hero-divider-mid">
+            <div class="line"></div>
+            <div class="center-icon"></div>
+            <div class="line"></div>
+        </div>
+
+        <p>Empires that built the foundation of a timeless civilization.</p>
+    </section>
+
+    <!-- Cards Section -->
+    <section class="cards-section">
+        <div class="cards-grid">
+
+            <!-- Indus Valley Civilization -->
+            <div class="empire-card card-indus">
+                <div class="card-border">
+                    <div class="inner-deco tl"></div>
+                    <div class="inner-deco tr"></div>
+                    <div class="inner-deco bl"></div>
+                    <div class="inner-deco br"></div>
+                    <div class="corner-bottom-left"></div>
+                    <div class="corner-bottom-right"></div>
+
+                    <div class="card-bg-image">
+                        <img src="https://images.unsplash.com/photo-1595658658401-1b6e9f5d8b6c?w=600" alt="Indus Valley">
+                    </div>
+
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <span class="emoji">⚱</span>
+                        </div>
+                        <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+                        <div class="card-divider">
+                            <div class="line"></div>
+                            <div class="diamond"></div>
+                            <div class="line"></div>
+                        </div>
+                        <p class="card-desc">
+                            One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                        </p>
+                    </div>
+
+                    <div class="bottom-ornament">
+                        <svg viewBox="0 0 50 50" fill="none">
+                            <path d="M25 5 L28 18 L42 18 L30 26 L35 40 L25 30 L15 40 L20 26 L8 18 L22 18 Z" 
+                                  fill="#2d9b8e" opacity="0.9"/>
+                            <circle cx="25" cy="22" r="5" fill="#d4af37"/>
+                        </svg>
+                    </div>
+
+                    <div class="card-bottom-image">
+                        <img src="https://images.unsplash.com/photo-1595658658401-1b6e9f5d8b6c?w=600" alt="Ruins">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Maurya Empire -->
+            <div class="empire-card card-maurya">
+                <div class="card-border">
+                    <div class="inner-deco tl"></div>
+                    <div class="inner-deco tr"></div>
+                    <div class="inner-deco bl"></div>
+                    <div class="inner-deco br"></div>
+                    <div class="corner-bottom-left"></div>
+                    <div class="corner-bottom-right"></div>
+
+                    <div class="card-bg-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ashoka_Lion_Capital.jpg/640px-Ashoka_Lion_Capital.jpg" alt="Maurya">
+                    </div>
+
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <span class="emoji">🦁</span>
+                        </div>
+                        <h3 class="card-title">MAURYA EMPIRE</h3>
+                        <div class="card-divider">
+                            <div class="line"></div>
+                            <div class="diamond"></div>
+                            <div class="line"></div>
+                        </div>
+                        <p class="card-desc">
+                            The first great empire of India, known for unity, administration and Ashoka's dhamma.
+                        </p>
+                    </div>
+
+                    <div class="bottom-ornament">
+                        <svg viewBox="0 0 50 50" fill="none">
+                            <circle cx="25" cy="25" r="18" stroke="#c4943a" stroke-width="2" fill="none"/>
+                            <path d="M25 10 L25 40 M10 25 L40 25" stroke="#d4af37" stroke-width="1.5" opacity="0.8"/>
+                            <circle cx="25" cy="25" r="6" fill="#c4943a"/>
+                        </svg>
+                    </div>
+
+                    <div class="card-bottom-image">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Ashoka_Lion_Capital.jpg/640px-Ashoka_Lion_Capital.jpg" alt="Lion Capital">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gupta Empire -->
+            <div class="empire-card card-gupta">
+                <div class="card-border">
+                    <div class="inner-deco tl"></div>
+                    <div class="inner-deco tr"></div>
+                    <div class="inner-deco bl"></div>
+                    <div class="inner-deco br"></div>
+                    <div class="corner-bottom-left"></div>
+                    <div class="corner-bottom-right"></div>
+
+                    <div class="card-bg-image">
+                        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600" alt="Gupta">
+                    </div>
+
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <span class="emoji">🪙</span>
+                        </div>
+                        <h3 class="card-title">GUPTA EMPIRE</h3>
+                        <div class="card-divider">
+                            <div class="line"></div>
+                            <div class="diamond"></div>
+                            <div class="line"></div>
+                        </div>
+                        <p class="card-desc">
+                            The Golden Age of India – remarkable in science, art, literature and architecture.
+                        </p>
+                    </div>
+
+                    <div class="bottom-ornament">
+                        <svg viewBox="0 0 50 50" fill="none">
+                            <path d="M25 5 L30 20 L45 20 L33 28 L38 43 L25 33 L12 43 L17 28 L5 20 L20 20 Z" 
+                                  fill="#7c4dff" opacity="0.8"/>
+                            <circle cx="25" cy="24" r="5" fill="#d4af37"/>
+                        </svg>
+                    </div>
+
+                    <div class="card-bottom-image">
+                        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=600" alt="Temple">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Bottom Page Ornament -->
+    <div class="page-bottom-ornament">
+        <div class="line"></div>
+        <div class="center-circle">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z"/>
+            </svg>
+        </div>
+        <div class="line"></div>
+    </div>
+
+</body>
+</html>

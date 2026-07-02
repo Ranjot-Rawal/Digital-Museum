@@ -6,7 +6,7 @@
 
 body {
     background-color: black;
-    background-image: url(z-fighters.jpg);
+    background-image: url("MAIN PICS/freedom-fighters-body.jpg");
     background-size: cover;
     /* background-size: 102vw 116vh; */
     background-repeat: no-repeat;
@@ -29,6 +29,8 @@ body {
     background: linear-gradient(180deg, #8b6914, #d4af37);
     border-radius: 4px;
 }
+
+/* Navigation Bar */
 
 nav {
     background: rgba(0, 0, 0, 0.85);
@@ -359,20 +361,26 @@ footer {
     }
 
     nav {
-        padding: 14px 8px;
         overflow-x: auto;
         white-space: nowrap;
+        text-align: center;
+        padding: 15px 10px;
+        /* display: flex; */
+        /* justify-content: center; */
     }
 
     nav a {
+        display: inline-block;
         margin: 0 10px;
-        font-size: 14px;
+        font-size: 15px;
     }
 
     .head h1 {
-        font-size: 34px;
+        color:#e3b33c;
+        font-size: 30px;
         text-align: center;
         margin-top: 20px;
+        margin-left: 0;
     }
 
     .head h1::after {
@@ -380,8 +388,9 @@ footer {
     }
 
     .head p {
+        color:#6f570a;
         width: 90%;
-        font-size: 14px;
+        font-size: 15px;
         text-align: center;
         margin-top: 12px;
     }
@@ -419,10 +428,11 @@ footer {
         padding: 0 10px;
     }
 
-    /* .quote { */
+    .quote { 
         /* margin-top: -80px; */
         /* margin-bottom: 80px; */
-    /* } */
+        margin: -80px 0 0 0;
+    }
 
     .quote img {
         width: 300px;

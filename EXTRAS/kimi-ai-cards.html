@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indus Valley Cards</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #050505;
+            font-family: 'Inter', sans-serif;
+            padding: 60px 20px;
+            min-height: 100vh;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 42px;
+            color: #d4af37;
+            letter-spacing: 6px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 20px auto 0;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* ========== BASE CARD STYLES ========== */
+        .iv-card {
+            position: relative;
+            width: 100%;
+            max-width: 320px;
+            margin: 0 auto;
+            background: rgba(10, 10, 15, 0.95);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .iv-card:hover {
+            transform: translateY(-8px);
+        }
+
+        /* Ornate Border Frame */
+        .card-frame {
+            position: relative;
+            padding: 35px 25px 100px;
+            border: 2px solid var(--accent-color);
+            border-radius: 4px;
+            height: 100%;
+            background: 
+                linear-gradient(180deg, var(--card-bg) 0%, rgba(5,5,10,0.9) 100%);
+        }
+
+        /* Corner Ornaments */
+        .card-frame::before,
+        .card-frame::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--accent-color);
+        }
+
+        .card-frame::before {
+            top: -2px;
+            left: -2px;
+            border-right: none;
+            border-bottom: none;
+            border-top-left-radius: 8px;
+        }
+
+        .card-frame::after {
+            top: -2px;
+            right: -2px;
+            border-left: none;
+            border-bottom: none;
+            border-top-right-radius: 8px;
+        }
+
+        .corner-bl,
+        .corner-br {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border: 2px solid var(--accent-color);
+            bottom: -2px;
+        }
+
+        .corner-bl {
+            left: -2px;
+            border-right: none;
+            border-top: none;
+            border-bottom-left-radius: 8px;
+        }
+
+        .corner-br {
+            right: -2px;
+            border-left: none;
+            border-top: none;
+            border-bottom-right-radius: 8px;
+        }
+
+        /* Inner decorative lines at corners */
+        .card-frame .inner-corner {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border: 1px solid var(--accent-dim);
+        }
+
+        .inner-corner.tl { top: 6px; left: 6px; border-right: none; border-bottom: none; }
+        .inner-corner.tr { top: 6px; right: 6px; border-left: none; border-bottom: none; }
+        .inner-corner.bl { bottom: 6px; left: 6px; border-right: none; border-top: none; }
+        .inner-corner.br { bottom: 6px; right: 6px; border-left: none; border-top: none; }
+
+        /* Icon Circle */
+        .icon-container {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle, rgba(212,175,55,0.15) 0%, transparent 70%);
+            position: relative;
+        }
+
+        .icon-container::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 1px solid var(--gold-dim);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+
+        .icon-container img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px var(--accent-glow));
+        }
+
+        .icon-container .emoji-icon {
+            font-size: 28px;
+            filter: drop-shadow(0 0 8px var(--accent-glow));
+        }
+
+        /* Title */
+        .card-title {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--gold);
+            text-align: center;
+            line-height: 1.3;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        /* Decorative Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .divider-line {
+            width: 50px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-dim), transparent);
+        }
+
+        .divider-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--gold);
+            transform: rotate(45deg);
+            box-shadow: 0 0 6px var(--gold-glow);
+        }
+
+        /* Description */
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-color);
+            text-align: center;
+            line-height: 1.7;
+            padding: 0 10px;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        /* Bottom Image Area */
+        .card-image-wrap {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 140px;
+            overflow: hidden;
+        }
+
+        .card-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                0deg, 
+                var(--card-bg) 0%, 
+                var(--accent-transparent) 40%, 
+                transparent 100%
+            );
+            mix-blend-mode: overlay;
+        }
+
+        .card-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            filter: sepia(0.3) saturate(1.2) hue-rotate(var(--hue-rotate));
+        }
+
+        /* Bottom Ornament */
+        .bottom-ornament {
+            position: absolute;
+            bottom: 45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            z-index: 2;
+        }
+
+        .bottom-ornament svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 6px var(--accent-glow));
+        }
+
+        /* ========== COLOR THEMES ========== */
+        
+        /* Theme: Royal Blue */
+        .theme-blue {
+            --accent-color: #3b82f6;
+            --accent-dim: #1e40af;
+            --accent-glow: rgba(59, 130, 246, 0.4);
+            --accent-transparent: rgba(59, 130, 246, 0.3);
+            --card-bg: rgba(15, 23, 42, 0.9);
+            --gold: #d4af37;
+            --gold-dim: #b8941f;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --text-color: #cbd5e1;
+            --hue-rotate: 0deg;
+        }
+
+        /* Theme: Emerald Green */
+        .theme-green {
+            --accent-color: #10b981;
+            --accent-dim: #047857;
+            --accent-glow: rgba(16, 185, 129, 0.4);
+            --accent-transparent: rgba(16, 185, 129, 0.3);
+            --card-bg: rgba(6, 20, 15, 0.9);
+            --gold: #d4af37;
+            --gold-dim: #b8941f;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --text-color: #d1fae5;
+            --hue-rotate: 120deg;
+        }
+
+        /* Theme: Imperial Gold */
+        .theme-gold {
+            --accent-color: #d4af37;
+            --accent-dim: #b8941f;
+            --accent-glow: rgba(212, 175, 55, 0.4);
+            --accent-transparent: rgba(212, 175, 55, 0.3);
+            --card-bg: rgba(25, 20, 5, 0.9);
+            --gold: #f0d878;
+            --gold-dim: #d4af37;
+            --gold-glow: rgba(240, 216, 120, 0.4);
+            --text-color: #fef3c7;
+            --hue-rotate: 30deg;
+        }
+
+        /* Theme: Crimson Red */
+        .theme-red {
+            --accent-color: #dc2626;
+            --accent-dim: #991b1b;
+            --accent-glow: rgba(220, 38, 38, 0.4);
+            --accent-transparent: rgba(220, 38, 38, 0.3);
+            --card-bg: rgba(25, 5, 5, 0.9);
+            --gold: #d4af37;
+            --gold-dim: #b8941f;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --text-color: #fecaca;
+            --hue-rotate: 0deg;
+        }
+
+        /* Theme: Royal Purple */
+        .theme-purple {
+            --accent-color: #a855f7;
+            --accent-dim: #7e22ce;
+            --accent-glow: rgba(168, 85, 247, 0.4);
+            --accent-transparent: rgba(168, 85, 247, 0.3);
+            --card-bg: rgba(20, 10, 30, 0.9);
+            --gold: #d4af37;
+            --gold-dim: #b8941f;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --text-color: #e9d5ff;
+            --hue-rotate: 270deg;
+        }
+
+        /* Theme: Teal Cyan */
+        .theme-teal {
+            --accent-color: #14b8a6;
+            --accent-dim: #0f766e;
+            --accent-glow: rgba(20, 184, 166, 0.4);
+            --accent-transparent: rgba(20, 184, 166, 0.3);
+            --card-bg: rgba(10, 25, 25, 0.9);
+            --gold: #d4af37;
+            --gold-dim: #b8941f;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --text-color: #ccfbf1;
+            --hue-rotate: 160deg;
+        }
+
+        /* Theme: Magenta Rose */
+        .theme-magenta {
+            --accent-color: #e11d8d;
+            --accent-dim: #be185d;
+            --accent-glow: rgba(225, 29, 141, 0.4);
+            --accent-transparent: rgba(225, 29, 141, 0.3);
+            --card-bg: rgba(25, 5, 15, 0.9);
+            --gold: #d4af37;
+            --gold-dim: #b8941f;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --text-color: #fce7f3;
+            --hue-rotate: 300deg;
+        }
+
+        /* Theme: Silver / Monochrome */
+        .theme-silver {
+            --accent-color: #9ca3af;
+            --accent-dim: #6b7280;
+            --accent-glow: rgba(156, 163, 175, 0.4);
+            --accent-transparent: rgba(156, 163, 175, 0.3);
+            --card-bg: rgba(15, 15, 15, 0.95);
+            --gold: #e5e7eb;
+            --gold-dim: #9ca3af;
+            --gold-glow: rgba(229, 231, 235, 0.4);
+            --text-color: #d1d5db;
+            --hue-rotate: 0deg;
+        }
+
+        /* Theme: Olive Green */
+        .theme-olive {
+            --accent-color: #84cc16;
+            --accent-dim: #4d7c0f;
+            --accent-glow: rgba(132, 204, 22, 0.4);
+            --accent-transparent: rgba(132, 204, 22, 0.3);
+            --card-bg: rgba(15, 20, 5, 0.9);
+            --gold: #d4af37;
+            --gold-dim: #b8941f;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --text-color: #ecfccb;
+            --hue-rotate: 70deg;
+        }
+
+        /* Theme: Deep Navy */
+        .theme-navy {
+            --accent-color: #6366f1;
+            --accent-dim: #4338ca;
+            --accent-glow: rgba(99, 102, 241, 0.4);
+            --accent-transparent: rgba(99, 102, 241, 0.3);
+            --card-bg: rgba(10, 10, 25, 0.9);
+            --gold: #d4af37;
+            --gold-dim: #b8941f;
+            --gold-glow: rgba(212, 175, 55, 0.4);
+            --text-color: #c7d2fe;
+            --hue-rotate: 230deg;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="section-title">MORE COLOR COMBINATIONS</h2>
+
+    <div class="cards-container">
+
+        <!-- Blue Theme -->
+        <div class="iv-card theme-blue">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🏺</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 2 L22 12 L32 10 L24 16 L30 24 L20 18 L10 24 L16 16 L8 10 L18 12 Z" 
+                              fill="var(--accent-color)" opacity="0.8"/>
+                        <circle cx="20" cy="20" r="6" fill="var(--gold)" opacity="0.9"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Green Theme -->
+        <div class="iv-card theme-green">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🐂</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="14" stroke="var(--accent-color)" stroke-width="1.5" fill="none"/>
+                        <circle cx="20" cy="20" r="8" stroke="var(--gold)" stroke-width="1" fill="none"/>
+                        <path d="M20 6 L20 10 M20 30 L20 34 M6 20 L10 20 M30 20 L34 20" 
+                              stroke="var(--accent-color)" stroke-width="1.5"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Gold Theme -->
+        <div class="iv-card theme-gold">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🏺</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 4 L24 14 L34 14 L26 20 L30 30 L20 24 L10 30 L14 20 L6 14 L16 14 Z" 
+                              fill="var(--gold)" opacity="0.9"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Red Theme -->
+        <div class="iv-card theme-red">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🐂</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 2 L23 14 L35 14 L25 22 L29 34 L20 26 L11 34 L15 22 L5 14 L17 14 Z" 
+                              fill="var(--accent-color)" opacity="0.8"/>
+                        <circle cx="20" cy="20" r="5" fill="var(--gold)"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Purple Theme -->
+        <div class="iv-card theme-purple">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🏺</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="12" stroke="var(--accent-color)" stroke-width="2" fill="none"/>
+                        <path d="M20 8 L20 32 M8 20 L32 20" stroke="var(--gold)" stroke-width="1.5"/>
+                        <circle cx="20" cy="20" r="4" fill="var(--accent-color)"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Teal Theme -->
+        <div class="iv-card theme-teal">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🌿</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 4 C28 4, 34 10, 34 18 C34 28, 20 36, 20 36 C20 36, 6 28, 6 18 C6 10, 12 4, 20 4" 
+                              stroke="var(--accent-color)" stroke-width="1.5" fill="none"/>
+                        <circle cx="20" cy="18" r="6" fill="var(--gold)" opacity="0.8"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Magenta Theme -->
+        <div class="iv-card theme-magenta">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🪷</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 6 L24 16 L34 16 L26 22 L30 32 L20 26 L10 32 L14 22 L6 16 L16 16 Z" 
+                              fill="var(--accent-color)" opacity="0.8"/>
+                        <circle cx="20" cy="20" r="5" fill="var(--gold)" opacity="0.9"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Silver Theme -->
+        <div class="iv-card theme-silver">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🐂</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <rect x="10" y="10" width="20" height="20" stroke="var(--accent-color)" stroke-width="1.5" fill="none" transform="rotate(45 20 20)"/>
+                        <rect x="14" y="14" width="12" height="12" stroke="var(--gold)" stroke-width="1" fill="none" transform="rotate(45 20 20)"/>
+                        <circle cx="20" cy="20" r="3" fill="var(--accent-color)"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Olive Theme -->
+        <div class="iv-card theme-olive">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🏺</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <path d="M20 4 L22 16 L34 16 L24 22 L28 34 L20 26 L12 34 L16 22 L6 16 L18 16 Z" 
+                              fill="var(--gold)" opacity="0.9"/>
+                        <circle cx="20" cy="18" r="4" fill="var(--accent-color)"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+        <!-- Navy Theme -->
+        <div class="iv-card theme-navy">
+            <div class="card-frame">
+                <div class="inner-corner tl"></div>
+                <div class="inner-corner tr"></div>
+                <div class="inner-corner bl"></div>
+                <div class="inner-corner br"></div>
+                <div class="corner-bl"></div>
+                <div class="corner-br"></div>
+
+                <div class="icon-container">
+                    <span class="emoji-icon">🪷</span>
+                </div>
+
+                <h3 class="card-title">INDUS VALLEY<br>CIVILIZATION</h3>
+
+                <div class="divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-dot"></div>
+                    <div class="divider-line"></div>
+                </div>
+
+                <p class="card-desc">
+                    One of the world's earliest urban civilizations, advanced in city planning, trade and culture.
+                </p>
+
+                <div class="bottom-ornament">
+                    <svg viewBox="0 0 40 40" fill="none">
+                        <circle cx="20" cy="20" r="14" stroke="var(--accent-color)" stroke-width="1.5" fill="none"/>
+                        <path d="M20 8 L20 32 M10 14 L30 26 M30 14 L10 26" stroke="var(--gold)" stroke-width="1" opacity="0.7"/>
+                        <circle cx="20" cy="20" r="5" fill="var(--accent-color)" opacity="0.8"/>
+                    </svg>
+                </div>
+
+                <div class="card-image-wrap">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mohenjo-daro_Pillars.jpg/640px-Mohenjo-daro_Pillars.jpg" alt="Indus Valley">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

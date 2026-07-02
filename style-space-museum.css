@@ -67,8 +67,9 @@ nav a.active::after {
 }
 
 
+
 .spacepic {
-    background-image: url(space-body.png);
+    background-image: url("MAIN PICS/space-body.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -134,7 +135,7 @@ a {
 
 .card-s1 {
     /* background-color: rgb(19, 19, 55); */
-    background-image: url(neil.jpg);
+    background-image: url("MAIN PICS/neil.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     color: gold;
@@ -149,7 +150,7 @@ a {
 
 .card-s2 {
     /* background-color: rgb(19, 19, 55); */
-    background-image: url(james.jpg);
+    background-image: url("MAIN PICS/james.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     color: gold;
@@ -164,7 +165,7 @@ a {
 
 .card-s3 {
     /* background-color: rgb(19, 19, 55); */
-    background-image: url(marspic.jpg);
+    background-image: url("MAIN PICS/marspic.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     color: gold;
@@ -179,7 +180,7 @@ a {
 
 .card-s4 {
     /* background-color: rgb(19, 19, 55); */
-    background-image: url(isspic.jpg);
+    background-image: url("MAIN PICS/isspic.jpg");
     background-size: contain;
     background-repeat: no-repeat;
     color: gold;
@@ -237,7 +238,6 @@ footer{
     width: 100vw;
 }
 
-/* ================= MOBILE VIEW ================= */
 
 @media (max-width: 768px) {
 
@@ -245,13 +245,13 @@ footer{
         overflow-x: auto;
         white-space: nowrap;
         text-align: center;
-        /* display: flex;
-        justify-content: center; */
+        padding: 15px 10px;
     }
 
     nav a {
         display: inline-block;
         margin: 0 10px;
+        font-size: 15px;
     }
 
     .spacepic {
