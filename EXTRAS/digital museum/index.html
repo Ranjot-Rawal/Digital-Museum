@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONICLE NEXUS | A Digital Museum Experience</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<base target="_blank">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="preloader-text">CHRONICLE</div>
+            <div class="preloader-bar">
+                <div class="preloader-progress"></div>
+            </div>
+            <div class="preloader-sub">NEXUS</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-brand">
+            <span class="brand-icon">◈</span>
+            <span class="brand-text">CHRONICLE NEXUS</span>
+        </div>
+        <div class="nav-links">
+            <a href="#hero" class="nav-link active">Home</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#ancient" class="nav-link">Ancient India</a>
+            <a href="#freedom" class="nav-link">Freedom Fighters</a>
+            <a href="#space" class="nav-link">Space Museum</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="nav-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-bg">
+            <div class="hero-bg-layer layer-1"></div>
+            <div class="hero-bg-layer layer-2"></div>
+            <div class="hero-bg-layer layer-3"></div>
+            <div class="hero-vignette"></div>
+        </div>
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-label" data-reveal>
+                <span class="label-line"></span>
+                <span>A Digital Museum Experience</span>
+                <span class="label-line"></span>
+            </div>
+            <h1 class="hero-title" data-reveal>
+                <span class="title-line">CHRONICLE</span>
+                <span class="title-line">NEXUS</span>
+            </h1>
+            <p class="hero-desc" data-reveal>
+                Step into a curated world of ancient civilizations, freedom movements, 
+                space exploration, and timeless art. Where history breathes and stories unfold.
+            </p>
+            <div class="hero-cta" data-reveal>
+                <a href="#gallery" class="btn-primary">
+                    <span class="btn-text">Explore Gallery</span>
+                    <span class="btn-icon">→</span>
+                    <span class="btn-glow"></span>
+                </a>
+                <a href="#timeline" class="btn-secondary">
+                    <span class="btn-text">Journey Through Time</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
+        </div>
+        <div class="hero-corner hero-corner-tl">◈</div>
+        <div class="hero-corner hero-corner-tr">◈</div>
+        <div class="hero-corner hero-corner-bl">◈</div>
+        <div class="hero-corner hero-corner-br">◈</div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="stats-container">
+            <div class="stat-item" data-count="5000">
+                <span class="stat-number">0</span>
+                <span class="stat-suffix">+</span>
+                <span class="stat-label">Years of History</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-count="150">
+                <span class="stat-number">0</span>
+                <span class="stat-suffix">+</span>
+                <span class="stat-label">Rare Artifacts</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-count="50">
+                <span class="stat-number">0</span>
+                <span class="stat-suffix">+</span>
+                <span class="stat-label">Freedom Heroes</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item" data-count="75">
+                <span class="stat-number">0</span>
+                <span class="stat-suffix">+</span>
+                <span class="stat-label">Space Missions</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section id="gallery" class="collections">
+        <div class="section-header" data-reveal>
+            <span class="section-tag">Collections</span>
+            <h2 class="section-title">Curated Exhibitions</h2>
+            <p class="section-desc">Three immersive galleries spanning millennia of human achievement</p>
+        </div>
+        <div class="collections-grid">
+            <a href="ancient-india.html" class="collection-card" data-reveal>
+                <div class="collection-bg">
+                    <div class="collection-overlay"></div>
+                </div>
+                <div class="collection-content">
+                    <span class="collection-number">01</span>
+                    <h3 class="collection-title">Ancient India</h3>
+                    <p class="collection-desc">From the Indus Valley to the Mauryan Empire — discover the foundations of one of the world's oldest continuous civilizations.</p>
+                    <div class="collection-meta">
+                        <span class="meta-item">2600 BCE — 185 BCE</span>
+                        <span class="meta-item">47 Artifacts</span>
+                    </div>
+                    <div class="collection-arrow">
+                        <span>Explore</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </div>
+                <div class="collection-border"></div>
+            </a>
+            <a href="freedom-fighters.html" class="collection-card" data-reveal>
+                <div class="collection-bg">
+                    <div class="collection-overlay"></div>
+                </div>
+                <div class="collection-content">
+                    <span class="collection-number">02</span>
+                    <h3 class="collection-title">Freedom Fighters</h3>
+                    <p class="collection-desc">The brave souls who shaped India's destiny through sacrifice, courage, and an unwavering belief in liberty.</p>
+                    <div class="collection-meta">
+                        <span class="meta-item">1857 — 1947</span>
+                        <span class="meta-item">50 Heroes</span>
+                    </div>
+                    <div class="collection-arrow">
+                        <span>Explore</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </div>
+                <div class="collection-border"></div>
+            </a>
+            <a href="space-museum.html" class="collection-card" data-reveal>
+                <div class="collection-bg">
+                    <div class="collection-overlay"></div>
+                </div>
+                <div class="collection-content">
+                    <span class="collection-number">03</span>
+                    <h3 class="collection-title">Space Exploration</h3>
+                    <p class="collection-desc">From ancient astronomical observations to modern space missions — humanity's eternal quest to reach the stars.</p>
+                    <div class="collection-meta">
+                        <span class="meta-item">1969 — Present</span>
+                        <span class="meta-item">75 Missions</span>
+                    </div>
+                    <div class="collection-arrow">
+                        <span>Explore</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                </div>
+                <div class="collection-border"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="timeline-bg"></div>
+        <div class="section-header" data-reveal>
+            <span class="section-tag">Chronology</span>
+            <h2 class="section-title">Journey Across Time</h2>
+            <p class="section-desc">Every civilization leaves footprints that shape our future</p>
+        </div>
+        <div class="timeline-container">
+            <div class="timeline-line">
+                <div class="timeline-progress"></div>
+            </div>
+            <div class="timeline-items">
+                <div class="timeline-item" data-reveal>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-era">Ancient Era</span>
+                        <h3 class="timeline-title">2600 BCE</h3>
+                        <p class="timeline-text">The Indus Valley cities flourish with advanced urban planning, sophisticated drainage systems, and a thriving trade network spanning from Mesopotamia to Central Asia.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Harappa</span>
+                            <span class="tag">Mohenjo-daro</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-reveal>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-era">Classical Era</span>
+                        <h3 class="timeline-title">322 BCE</h3>
+                        <p class="timeline-text">The Mauryan Empire rises under Chandragupta Maurya, unifying the Indian subcontinent and establishing one of history's largest empires.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Chandragupta</span>
+                            <span class="tag">Ashoka</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-reveal>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-era">Freedom Struggle</span>
+                        <h3 class="timeline-title">1919 — 1947</h3>
+                        <p class="timeline-text">India's freedom movement intensifies with mass civil disobedience, non-violent resistance, and the collective awakening of a nation.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Gandhi</span>
+                            <span class="tag">Bhagat Singh</span>
+                            <span class="tag">Subhas Bose</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item" data-reveal>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-era">Space Age</span>
+                        <h3 class="timeline-title">1969 — Present</h3>
+                        <p class="timeline-text">Humanity enters a new space age. From the Apollo moon landing to India's Chandrayaan missions, we continue to push the boundaries of exploration.</p>
+                        <div class="timeline-tags">
+                            <span class="tag">Apollo 11</span>
+                            <span class="tag">Chandrayaan</span>
+                            <span class="tag">Mars Orbiter</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Artifact Showcase -->
+    <section class="artifact-showcase">
+        <div class="artifact-bg"></div>
+        <div class="artifact-container">
+            <div class="artifact-visual" data-reveal>
+                <div class="artifact-glow"></div>
+                <div class="artifact-image"></div>
+                <div class="artifact-ring ring-1"></div>
+                <div class="artifact-ring ring-2"></div>
+                <div class="artifact-ring ring-3"></div>
+            </div>
+            <div class="artifact-info" data-reveal>
+                <span class="section-tag">Featured Artifact</span>
+                <h2 class="artifact-title">The Ancient Chronicle</h2>
+                <p class="artifact-desc">
+                    A testament to the ingenuity of ancient Indian civilization. This collection represents 
+                    over 5,000 years of continuous cultural evolution — from the earliest urban settlements 
+                    to the grandest empires that shaped the course of human history.
+                </p>
+                <div class="artifact-stats">
+                    <div class="a-stat">
+                        <span class="a-stat-value">5,000+</span>
+                        <span class="a-stat-label">Years</span>
+                    </div>
+                    <div class="a-stat">
+                        <span class="a-stat-value">150+</span>
+                        <span class="a-stat-label">Artifacts</span>
+                    </div>
+                    <div class="a-stat">
+                        <span class="a-stat-value">12</span>
+                        <span class="a-stat-label">Dynasties</span>
+                    </div>
+                </div>
+                <a href="ancient-india.html" class="btn-primary">
+                    <span class="btn-text">View Collection</span>
+                    <span class="btn-icon">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Map Section -->
+    <section class="world-section">
+        <div class="world-bg"></div>
+        <div class="world-content">
+            <div class="section-header" data-reveal>
+                <span class="section-tag">Global Reach</span>
+                <h2 class="section-title">History Without Borders</h2>
+                <p class="section-desc">Explore how ancient Indian civilization connected with the world</p>
+            </div>
+            <div class="world-map-container" data-reveal>
+                <div class="world-map"></div>
+                <div class="map-pins">
+                    <div class="map-pin pin-1" data-info="Indus Valley — 2600 BCE">
+                        <div class="pin-dot"></div>
+                        <div class="pin-pulse"></div>
+                    </div>
+                    <div class="map-pin pin-2" data-info="Mesopotamia — Trade Hub">
+                        <div class="pin-dot"></div>
+                        <div class="pin-pulse"></div>
+                    </div>
+                    <div class="map-pin pin-3" data-info="Egypt — Cultural Exchange">
+                        <div class="pin-dot"></div>
+                        <div class="pin-pulse"></div>
+                    </div>
+                    <div class="map-pin pin-4" data-info="Southeast Asia — Spread of Buddhism">
+                        <div class="pin-dot"></div>
+                        <div class="pin-pulse"></div>
+                    </div>
+                    <div class="map-pin pin-5" data-info="Central Asia — Silk Road">
+                        <div class="pin-dot"></div>
+                        <div class="pin-pulse"></div>
+                    </div>
+                </div>
+                <div class="map-tooltip"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="quote-bg"></div>
+        <div class="quote-content" data-reveal>
+            <div class="quote-mark">"</div>
+            <blockquote>
+                A nation's culture resides in the hearts and in the soul of its people.
+            </blockquote>
+            <cite>— Mahatma Gandhi</cite>
+        </div>
+    </section>
+
+    <!-- AI Assistant -->
+    <div class="ai-assistant">
+        <a href="ai.html" class="ai-trigger">
+            <div class="ai-orb">
+                <div class="ai-face">
+                    <div class="ai-eye left"></div>
+                    <div class="ai-eye right"></div>
+                    <div class="ai-mouth"></div>
+                </div>
+            </div>
+            <div class="ai-ring ring-1"></div>
+            <div class="ai-ring ring-2"></div>
+            <div class="ai-ring ring-3"></div>
+        </a>
+        <div class="ai-bubble">
+            <div class="bubble-text">Ask Me Anything</div>
+            <div class="bubble-arrow"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <span class="brand-icon">◈</span>
+                <span class="brand-text">CHRONICLE NEXUS</span>
+            </div>
+            <div class="footer-desc">
+                A digital museum dedicated to preserving and celebrating the rich tapestry 
+                of human history, from ancient civilizations to the final frontier.
+            </div>
+        </div>
+        <div class="footer-links">
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <a href="ancient-india.html">Ancient India</a>
+                <a href="freedom-fighters.html">Freedom Fighters</a>
+                <a href="space-museum.html">Space Museum</a>
+                <a href="gallery.html">Gallery</a>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <a href="#timeline">Timeline</a>
+                <a href="#">Artifacts</a>
+                <a href="#">Research</a>
+                <a href="ai.html">AI Guide</a>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="#contact">Contact Us</a>
+                <a href="#">Newsletter</a>
+                <a href="#">Social Media</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-line"></div>
+            <p>© 2026 Chronicle Nexus. All rights reserved. Crafted with passion for history.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

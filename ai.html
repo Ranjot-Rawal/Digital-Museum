@@ -5,19 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style-AIBot.css">
+    <link rel="stylesheet" href="style-ai-bot.css">
 </head>
 
 <body>
+
     <section class="chat-section">
 
-        <h2>Chronicle Nexus AI Assistant</h2>
+        <h2><span id = "heading-1">Chronicle Nexus</span> <span id ="heading-2">AI Assistant</span></h2>
 
         <div class="chat-box" id="chatBox">
-
             <div class="bot">
-                Hello! 👋<br>
-                Select a question below.
+                <div class="png"> <img src="MAIN PICS/ai-assistant.png" alt=""></div>
+                <div class="greet">
+                    Hello! 👋<br>
+                    Select a question below.
+                </div>
             </div>
 
         </div>
@@ -53,6 +56,7 @@
         <div class="ask"></div>
         <button class="ask-btn" onclick="sendQuestion()">Ask</button>
         <a href="index.html" class="exit-btn">← Exit to Home</a>
+        <div class="colorline"></div>
     </section>
 </body>
 <script>
@@ -186,7 +190,7 @@
 
             chat.innerHTML += `
 <div class="bot">
-🤖 ${ans}
+ ${ans}
 </div>
 `;
 

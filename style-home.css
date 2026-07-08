@@ -60,7 +60,6 @@ nav a.active::after {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: left;
     text-align: left;
     background: url("MAIN PICS/Project Index Pic.jpg") center/cover;
     position: relative;
@@ -126,6 +125,7 @@ nav a.active::after {
 
 
 .container-i {
+    margin: 0 auto;
     background-image: url("MAIN PICS/index-card-container.png");
     background-size: cover;
     padding: 70px;
@@ -134,18 +134,8 @@ nav a.active::after {
     margin: 109px;
 }
 
-.container h1 {
-    transition: 0.4s;
-    display: inline-block;
-}
-
-.container h1:hover {
-    transform: scale(1.09);
-}
-
 .button-i {
     min-height: 46px;
-    padding: 100px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -186,9 +176,13 @@ nav a.active::after {
 /* Home page Card */
 
 .card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 30px;
     border-radius: 20px;
-    background: rgba(255, 255, 255,0);
+    background: rgba(255, 255, 255, 0);
     border: 1px solid rgba(255, 255, 255, 0.15);
     transition: 0.3s;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
@@ -217,12 +211,12 @@ a {
 
 /* TIMELINE BAND */
 
-.timeline-band {
+/* .timeline-band {
     height: 50%;
-    width: 50vw;
+    width: 50%;
     position: relative;
     display: inline-grid;
-    grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1fr);
+    grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1fr);
     gap: 24px;
     margin: 18px 195px 56px;
     color: #000000;
@@ -231,9 +225,32 @@ a {
     background: url("MAIN PICS/timeline-band.png");
     background-size: 100%;
     z-index: 4;
+} */
+
+.time-container {
+    display: flex;
+    margin: 0 0 0 0;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-.time{
+.timeline-band {
+    height: 50%;
+    border: 5px solid rgb(101, 91, 1);
+    background: url("MAIN PICS/timeline-band.png");
+    color: #000;
+    grid-template-columns: minmax(160px, 0.7fr) minmax(0, 1fr);
+    display: flex;
+    gap: 24px;
+    margin: 0 0 0 150px;
+    width: 50%;
+    padding: 28px;
+    position: relative;
+    z-index: 1;
+}
+
+.time {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,7 +263,7 @@ a {
     padding: 10px 0 10px 14px;
 }
 
-.timeline strong{
+.timeline strong {
     padding-top: 0px;
 }
 
@@ -261,40 +278,41 @@ a {
     font-weight: 800;
 }
 
-.timeline-upper{
+.timeline-upper {
     margin-top: 100px;
 }
 
-.timeline-below{
+.timeline-below {
     border-top: 2px solid rgb(107, 95, 29);
     border-radius: 10px;
     padding-left: 5px;
     margin-top: 10px;
 }
 
-.timeline{
+.timeline {
     box-shadow: 20px 8px 20px rgba(212, 188, 49, 0.6);
 }
 
-.timeline .band-hover{
+.timeline .band-hover {
     transition: 0.3s;
     box-shadow: 4px 2px 1px #020617;
 }
 
-.timeline .band-hover:hover{
+.timeline .band-hover:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 15px black;
 }
 
 /* Artifact */
-.png{
+.png {
     background-image: url("MAIN PICS/artifact.png");
     height: 600px;
     width: 512px;
-    background-size: cover;
-    margin: -600px 900px 0;
-    z-index: 6;
-    transform: scaleX(1.1);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: sticky;
+    right: 62px;
+    z-index: 0;
 }
 
 /* World Map */
@@ -305,7 +323,8 @@ a {
     align-items: center;
     margin-top: 50px;
 }
-.worldmap{
+
+.worldmap {
     background-image: url("MAIN PICS/world-map.png");
     background-size: cover;
     height: 400px;
@@ -313,10 +332,10 @@ a {
 }
 
 /* AI Pic In Index */
-.botpic{
+.botpic {
     height: 200px;
     width: 200px;
-    background-image:url("MAIN PICS/aibot.png") ;
+    background-image: url("MAIN PICS/aibot.png");
     background-size: cover;
     position: fixed;
     bottom: 30px;
@@ -325,11 +344,12 @@ a {
     z-index: 9;
 
 }
-.botpic:hover{
+
+.botpic:hover {
     transform: scale(1.09);
 }
 
-.bubble{
+.bubble {
     height: 100px;
     width: 200px;
     background-image: url("MAIN PICS/bubble.png");
@@ -350,237 +370,288 @@ footer {
     font-weight: bold;
     letter-spacing: 2px;
     margin-top: 50px;
-    border-top:2px solid gold
+    border-top: 2px solid gold
 }
 
 
 
 /* MOBILE VIEW */
 
-@media (max-width: 1500px){
-    .timeline-band{
-        width: 90vw;
-        margin: 0 0 0 0;
+@media (max-width: 1100px) {
+    .timeline-band {
+        width: 90%;
+        height: 52%;
     }
-    .time-container{
+
+    .timeline-band {
+        width: 90%;
+        /* margin: 0 150px 0 0; */
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        background-size: cover;
+        z-index: 1;
+        width: 96%;
+        padding: 5px;
+
+    }
+
+    .band-hover{
+        min-width: 40vw;
+    }
+
+    .time {
+        margin-top: -85px;
+    }
+
+    .timeline-band h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .timeline {
+        display: flex;
+        flex-direction: column;
+        width: 50vw;
+        align-items: center;
+        gap: 5.6px;
+    }
+
+    .timeline-upper {
         display: flex;
         justify-content: center;
     }
-    .png{
-        display: none;
+
+    .timeline strong,
+    .timeline p {
+        font-size: 14px;
     }
-    .worldmap{
+
+    .time-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .worldmap {
         margin: 0;
     }
-    .world{
+
+    .png {
+        height: 50vh;
+    }
+
+    .world {
         display: flex;
         justify-content: center;
     }
 }
 
-@media (max-width:768px){
+@media (max-width:768px) {
 
-nav{
+    nav {
         overflow-x: auto;
         white-space: nowrap;
         text-align: left;
     }
 
-nav a {
+    nav a {
         display: inline-block;
         margin: 0 10px;
-}
+    }
 
-/* Hero Section */
+    /* Hero Section */
 
-.mains{
-    height: 60vh;
-    justify-content:center;
-    align-items:flex-start;
-    padding:25px;
-}
+    .mains {
+        height: 60vh;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 25px;
+    }
 
-.mains h1{
-    font-size:50px;
-    width:auto;
-    margin-left:0;
-    line-height:0.95;
-}
+    .mains h1 {
+        font-size: 50px;
+        width: auto;
+        margin-left: 0;
+        line-height: 0.95;
+    }
 
-.mains .upper{
-    margin-left:0;
-    width:auto;
-    font-size:13px;
-}
+    .mains .upper {
+        margin-left: 0;
+        width: auto;
+        font-size: 13px;
+    }
 
-.mains .content{
-    margin-left:0;
-}
+    .mains .content {
+        margin-left: 0;
+    }
 
-.content p{
-    font-size:18px;
-}
-
-
-/* Containers */
-
-.container{
-    padding:25px 15px;
-}
-
-.container-i{
-    margin:20px 10px;
-    padding:25px 15px;
-}
+    .content p {
+        font-size: 18px;
+    }
 
 
-/* Home Cards */
+    /* Containers */
 
-.card{
-    width:100%;
-    margin-right:0;
-    padding:20px;
-}
+    .container {
+        padding: 25px 15px;
+    }
 
-.card h2{
-    width:100%;
-}
-
-
-/* Gallery Cards */
-
-.card-g,
-.card-a,
-.card-f,
-.card-s{
-    width:100%;
-}
+    .container-i {
+        margin: 20px 10px;
+        padding: 25px 15px;
+    }
 
 
-/* Timeline */
+    /* Home Cards */
 
-.timeline-band{
-    width: 90vw;
-    margin: 0 0 0 0;
-    height:470px;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-    background-size:cover;
-    z-index: 1;
-    width:95%;
-    padding:5px;
-    margin:auto;
+    .card {
+        width: 100%;
+        margin-right: 0;
+        padding: 20px;
+    }
 
-}
-
-.time{
-    margin-top: -85px;
-}
-
-.timeline-band h2{
-    font-size:24px;
-    text-align:center;
-}
-
-.timeline{
-    display:block;
-}
-
-.timeline-upper{
-    display: flex;
-    justify-content: center;
-}
-
-.timeline strong,
-.timeline p{
-    font-size:14px;
-}
+    .card h2 {
+        width: 100%;
+    }
 
 
-/* Artifact Image */
+    /* Gallery Cards */
 
-.png{
-    display:none;
-}
-
-
-/* World Map */
-
-.worldmap{
-    width:50%;
-    height:50%;
-    margin:30px auto;
-    background-position:center;
-}
+    .card-g,
+    .card-a,
+    .card-f,
+    .card-s {
+        width: 100%;
+    }
 
 
-/* Buttons */
+    /* Timeline */
 
-.button-i{
-    width:100%;
-    margin:12px 0;
-}
+    .timeline-band {
+        width: 90vw;
+        margin: 0 0 0 0;
+        height: 470px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        background-size: cover;
+        z-index: 1;
+        width: 95%;
+        padding: 5px;
+        margin: auto;
 
+    }
 
-/* Chatbot */
+    .time {
+        margin-top: -85px;
+    }
 
-.chat-section{
-    width:95%;
-    margin:30px auto;
-    padding:18px;
-}
+    .timeline-band h2 {
+        font-size: 24px;
+        text-align: center;
+    }
 
-.chat-box{
-    height:300px;
-}
+    .timeline {
+        display: block;
+        width: 60vw;
+        margin: 0 auto;
+    }
 
-.bot,
-.user{
-    max-width:90%;
-}
+    .timeline-upper {
+        display: flex;
+        justify-content: center;
+    }
 
-
-/* Floating Robot */
-
-.botpic{ 
-    height:110px;
-    width:80px;
-    right:35px;
-    bottom:10px;
-}
-
-.bubble{
-    bottom: 100px;
-    right: -30px;
-}
-
-/* Exit Button */
-
-.exit-btn{
-    top:12px;
-    right:12px;
-    padding:10px 15px;
-    font-size:14px;
-}
+    .timeline strong,
+    .timeline p {
+        font-size: 14px;
+    }
 
 
-/* Submit Button */
+    /* Artifact Image */
 
-.submit button{
-    width:100%;
-    margin:30px 0;
-}
+    .png {
+        display: none;
+    }
 
 
-/* Footer */
+    /* World Map */
 
-footer{
-    font-size:14px;
-    padding:18px;
-}
+    .worldmap {
+        width: 50%;
+        height: 50%;
+        margin: 30px auto;
+        background-position: center;
+    }
 
-.submit button {
+
+    /* Buttons */
+
+    .button-i {
+        width: 100%;
+        margin: 12px 0;
+    }
+
+
+    /* Chatbot */
+
+    .chat-section {
+        width: 95%;
+        margin: 30px auto;
+        padding: 18px;
+    }
+
+    .chat-box {
+        height: 300px;
+    }
+
+    .bot,
+    .user {
+        max-width: 90%;
+    }
+
+
+    /* Floating Robot */
+
+    .botpic {
+        height: 110px;
+        width: 80px;
+        right: 35px;
+        bottom: 10px;
+    }
+
+    .bubble {
+        bottom: 100px;
+        right: -30px;
+    }
+
+    /* Exit Button */
+
+    .exit-btn {
+        top: 12px;
+        right: 12px;
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+
+    /* Submit Button */
+
+    .submit button {
+        width: 100%;
+        margin: 30px 0;
+    }
+
+
+    /* Footer */
+
+    footer {
+        font-size: 14px;
+        padding: 18px;
+    }
+
+    .submit button {
         width: 100px;
         font-size: 15px;
     }
