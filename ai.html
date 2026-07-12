@@ -12,7 +12,7 @@
 
     <section class="chat-section">
 
-        <h2><span id = "heading-1">Chronicle Nexus</span> <span id ="heading-2">AI Assistant</span></h2>
+        <h2><span id="heading-1">Chronicle Nexus</span> <span id="heading-2">AI Assistant</span></h2>
 
         <div class="chat-box" id="chatBox">
             <div class="bot">
@@ -25,7 +25,7 @@
 
         </div>
 
-        <select id="question">
+        <!-- <select id="question">
             <option value="">Choose a Question</option>
             <option>What is the Indus Valley Civilization?</option>
             <option>Who was Bhagat Singh?</option>
@@ -54,12 +54,18 @@
             <option>What is NASA?</option>
         </select>
         <div class="ask"></div>
-        <button class="ask-btn" onclick="sendQuestion()">Ask</button>
+        <button class="askBtn" onclick="sendQuestion()">Ask</button> -->
+
+        <textarea id="question" placeholder="Ask anything about the museum..." rows="4"></textarea>
+
+        <div class="ask"></div>
+        <button class="askBtn" onclick="sendQuestion()">Ask</button>
         <a href="index.html" class="exit-btn">← Exit to Home</a>
         <div class="colorline"></div>
     </section>
+    <script src="ai.js"></script>
 </body>
-<script>
+<!-- <script>
     function sendQuestion() {
 
         let q = document.getElementById("question").value;
@@ -70,13 +76,9 @@
 
         let chat = document.getElementById("chatBox");
 
-        chat.innerHTML += `
-<div class="user">${q}</div>
-`;
+        chat.innerHTML += `<div class="user">${q}</div>`;
 
-        chat.innerHTML += `
-<div class="bot" id="typing">Typing...</div>
-`;
+        chat.innerHTML += `<div class="bot" id="typing">Typing...</div>`;
 
         chat.scrollTop = chat.scrollHeight;
 
@@ -188,17 +190,13 @@
 
             document.getElementById("typing").remove();
 
-            chat.innerHTML += `
-<div class="bot">
- ${ans}
-</div>
-`;
+            chat.innerHTML += `<div class="bot"> ${ans}</div>`;
 
             chat.scrollTop = chat.scrollHeight;
 
-        }, 1000);
+        }, 2000);
 
     }
-</script>
+</script> -->
 
 </html>
