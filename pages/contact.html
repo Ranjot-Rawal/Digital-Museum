@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Chronicle Nexus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style-contact.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="ancient-india.html">Ancient India</a>
+            <a href="freedom-fighters.html">Freedom Fighters</a>
+            <a href="space-museum.html">Space Museum</a>
+            <a href="contact.html" class="active">Contact</a>
+        </div>
+    </nav>
+    <section class="container">
+        <div class="corner-ornament top-left"></div>
+        <div class="corner-ornament top-right"></div>
+        
+        <h1>GET IN TOUCH</h1>
+        
+        <div class="container-divider">
+            <div class="line"></div>
+            <div class="dot"></div>
+            <div class="line"></div>
+        </div>
+        <p>We'd love to hear from you. Reach out for inquiries, collaborations, or feedback.</p>
+    </section>
+
+    <section class="info-cards">
+        <div class="info-card">
+            <div class="card-icon">📧</div>
+            <h3>Email Us</h3>
+            <p>hello@chroniclenexus.com</p>
+            <p class="secondary">support@chroniclenexus.com</p>
+        </div>
+        
+        <div class="info-card">
+            <div class="card-icon">📍</div>
+            <h3>Visit Us</h3>
+            <p>Sector 94, JLPL, Mohali</p>
+            <p class="secondary">Punjab, India - 140307</p>
+        </div>
+        
+        <div class="info-card">
+            <div class="card-icon">📱</div>
+            <h3>Call Us</h3>
+            <p>+91 788XX XXXXX</p>
+            <p class="secondary">Mon - Sat | 10:00 AM - 6:00 PM</p>
+        </div>
+    </section>
+
+    <section class="form-section">
+        <div class="form-container">
+            <h2>SEND US A MESSAGE</h2>
+            <div class="form-divider"></div>
+            
+            <form action="/api/contact" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Michael Jackson" maxlength="100" aria-describedby="name-error" required>
+                        <span class="field-error" id="name-error" aria-live="polite"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" placeholder="michael@example.com" maxlength="254" aria-describedby="email-error" required>
+                        <span class="field-error" id="email-error" aria-live="polite"></span>
+                    </div>
+                </div>
+                
+                <div class="form-group full" style="margin-bottom: 20px;">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" placeholder="General Inquiry" maxlength="150" aria-describedby="subject-error">
+                    <span class="field-error" id="subject-error" aria-live="polite"></span>
+                </div>
+                
+                <div class="form-group full" style="margin-bottom: 20px;">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here..." maxlength="500" aria-describedby="message-error message-counter" required></textarea>
+                    <div class="message-meta">
+                        <span class="field-error" id="message-error" aria-live="polite"></span>
+                        <span class="character-counter" id="message-counter" aria-live="polite"></span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                <p class="form-status" role="status" aria-live="polite"></p>
+                <div style="clear: both;"></div>
+            </form>
+            
+            <div class="form-ornament bl"></div>
+            <div class="form-ornament br"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">
+            <span>CHRONICLE NEXUS</span> | A Digital Museum Experience
+        </div>
+        
+        <div class="social-links">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="Instagram">📷</a>
+        </div>
+        
+        <p class="copyright">© 2026 Chronicle Nexus. All rights reserved.</p>
+    </footer>
+     <script src="../js/contact.js"></script>
+</body>
+</html>
